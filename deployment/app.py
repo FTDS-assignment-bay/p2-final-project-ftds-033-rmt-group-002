@@ -8,20 +8,26 @@ st.header("Customer Churn Insight")
 st.write("Predict Customer Churn")
 st.markdown('---')
 
-selected = option_menu(None, ["About", "EDA", "Predict"], 
-    icons=['house', 'file-earmark-bar-graph', 'search'], 
-    menu_icon="cast", default_index=0, orientation="horizontal",
-    styles={
-        "icon": {"color": "cyan", "font-size": "15px"}, 
-        "nav-link": {"font-size": "15px", "text-align": "left", "margin":"1px", "--hover-color": "#eee"}, 
-        "nav-link-selected": {"background-color": "grey"},
-    }
-)
+with st.sidebar:
+    st.subheader("Select Page")
+    selected = option_menu(None, ["About", "Exploratory Data Analysis", "Predict"], 
+        icons=['house', 'file-earmark-bar-graph', 'search'], 
+        menu_icon="cast", default_index=0, orientation="vertical",
+        styles={
+            "icon": {"color": "cyan", "font-size": "15px"}, 
+            "nav-link": {"font-size": "15px", "text-align": "left", "margin":"1px", "--hover-color": "#eee"}, 
+            "nav-link-selected": {"background-color": "grey"},
+        }
+    )
 
+    st.write("Team:")
+    st.write("Astrila Ikhlasia Eprina")
+    st.write("Muhammad Azhar Khaira")
+    st.write("Yuzal Qushoyyi Wahyudi")
 
-if selected == 'About':
+if selected == "About":
     about.run()
-elif selected == 'EDA':
+elif selected == "EDA":
     eda.run()
 else:
     prediction.run()
