@@ -48,6 +48,19 @@ def clean_data():
 
     # Add Underscore
     df.columns = df.columns.str.replace(' ', '_')
+
+    # Handle Missing Value
+    df = df.dropna()
+
+    # Change Data Type
+    df['customerid'] = df['customerid'].astype(int)
+    df['age'] = df['age'].astype(int)
+    df['tenure'] = df['tenure'].astype(int)
+    df['usage_frequency'] = df['usage_frequency'].astype(int)
+    df['support_calls'] = df['support_calls'].astype(int)
+    df['payment_delay'] = df['payment_delay'].astype(int)
+    df['last_interaction'] = df['last_interaction'].astype(int)
+    df['churn'] = df['churn'].astype(int)
     
     # Save Data
     df.to_csv('/opt/airflow/dags/clean_customer_churn.csv', index=False)
@@ -65,12 +78,12 @@ def post_elastic():
 
 default_args = {
     'owner': 'group2',
-    'start_date': dt.datetime(2024, 8, 25, 12, 49, 0) - dt.timedelta(hours=8),
+    'start_date': dt.datetime(2024, 8, 26, 16, 49, 0) - dt.timedelta(hours=8),
     'retries': 1,
     'retry_delay': dt.timedelta(minutes=1),
 }
 
-with DAG('DATADAGTRAIN',
+with DAG('DATADAG',
          default_args=default_args,
          schedule_interval= '30 6 * * *',
          catchup=False
