@@ -27,7 +27,7 @@ with st.sidebar:
 
 if selected == "About":
     about.run()
-elif selected == "EDA":
+elif selected == "Exploratory Data Analysis":
     eda.run()
 else:
     prediction.run()

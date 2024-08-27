@@ -1,5 +1,7 @@
 import streamlit as st
+import pandas as pd
 import joblib
+import os
 
 
 def run():
@@ -8,7 +10,7 @@ def run():
     model_predict = joblib.load("model_predict.pkl")
     
     # data input type
-    inputType = st.selectbox("Input type", ["Upload Excel or CSV file", "Form Input"])
+    input_type = st.selectbox("Input type", ["Form Input", "Upload Excel or CSV file"])
     st.markdown('---')
 
     # predict function
@@ -39,8 +41,170 @@ def run():
 
                 df_churn = df_churn.sort_values(by=["cluster"], ascending=True)
 
+                # save to excel
+                df_churn.to_excel("result.xlsx", index=False)
 
+                # df cluster
+                df_cluster_0 = df_churn[df_churn["cluster"] == 0]
+                df_cluster_1 = df_churn[df_churn["cluster"] == 1]
+                df_cluster_2 = df_churn[df_churn["cluster"] == 2]
+                df_cluster_3 = df_churn[df_churn["cluster"] == 3]
 
+                # result interface
+                st.subheader("Result:")
+                st.write(f"`{total_customer_churn} customers` from {total_customer} are predicted as churn.")
+                st.write("Customer Desciption:")
 
+                c_0 = ""
+                c_1 = ""
+                c_2 = ""
+                c_3 = ""
 
-        pass
+                cluster_0 = '''
+                    - 
+                    - 
+                    - 
+                '''
+
+                recommendation_0 = '''
+                    -
+                    -
+                    -
+                '''
+
+                cluster_1 = '''
+                    - 
+                    - 
+                    - 
+                '''
+
+                recommendation_1 = '''
+                    -
+                    -
+                    -
+                '''
+
+                cluster_2 = '''
+                    - 
+                    - 
+                    - 
+                '''
+
+                recommendation_2 = '''
+                    -
+                    -
+                    -
+                '''
+
+                cluster_3 = '''
+                    - 
+                    - 
+                    - 
+                '''
+
+                recommendation_3 = '''
+                    -
+                    -
+                    -
+                '''
+
+                if c_0 != "":
+                    st.write(f"Cluster 0: {len(df_cluster_0)} customer(s)")
+                    st.write(cluster_0)
+                    st.write("Recommendation:")
+                    st.write(recommendation_0)
+                    st.markdown('---')
+                
+                if c_1 != "":
+                    st.write(f"Cluster 1: {len(df_cluster_1)} customer(s)")
+                    st.write(cluster_1)
+                    st.write("Recommendation:")
+                    st.write(recommendation_1)
+                    st.markdown('---')
+                
+                if c_2 != "":
+                    st.write(f"Cluster 2: {len(df_cluster_2)} customer(s)")
+                    st.write(cluster_2)
+                    st.write("Recommendation:")
+                    st.write(recommendation_2)
+                    st.markdown('---')
+
+                if c_3 != "":
+                    st.write(f"Cluster 3: {len(df_cluster_3)} customer(s)")
+                    st.write(cluster_3)
+                    st.write("Recommendation:")
+                    st.write(recommendation_3)
+                    st.markdown('---')
+
+                with open("model_result.xlsx", "rb") as file:
+                    st.download_button(
+                        label = "Download Prediction Result",
+                        icon = "download_for_offline",
+                        data = file,
+                        file_name = "model_result.xlsx",
+                        mime = "application/vnd.ms-excel"
+                )
+    
+    # form upload file
+    if input_type == "Upload Excel or CSV file":
+        col_1, col_2 = st.columns([1, 1])
+
+        with open("data_test.xlsx", "rb") as file:
+            col_1.download_button(
+                label = "Download Data Example",
+                icon = "download_for_offline",
+                data = file,
+                file_name = "customer_example.xlsx",
+                mime = "application/vnd.ms-excel"
+            )
+        
+        with open("template.xlsx", "rb") as file:
+            col_2.download_button(
+                label = "Download Excel Template",
+                icon = "download_for_offline",
+                data = file,
+                file_name = "template.xlsx",
+                mime = "application/vnd.ms-excel"
+            )
+        
+        uploaded_file = st.file_uploader("Choose Excel or CSV file", type=["csv", "xlsx"], accept_multiple_files=False)
+        if uploaded_file is not None:
+            split_file_name = os.path.splitext(uploaded_file.name)
+            file_extension = split_file_name[1]
+
+            if file_extension == '.csv':
+                df = pd.read_csv(uploaded_file)
+            else:    
+                df = pd.read_excel(uploaded_file)
+            
+            predict_data(df)
+    else:
+    # form input
+        col_1, col_2 = st.columns([1, 1])
+        age = col_1.number_input("Age", min_value=0, max_value=120, value=30, step=1)
+        gender = col_2.selectbox("Gender", options=["Male", "Female"])
+        tenure = col_1.number_input("Tenure (in months)", min_value=0, max_value=100, value=12, step=1)
+        usage_frequency = col_2.number_input("Usage Frequency (times per month)", min_value=0, max_value=100, value=10, step=1)
+        support_calls = col_1.number_input("Support Calls", min_value=0, max_value=100, value=5, step=1)
+        payment_delay = col_2.number_input("Payment Delay (days)", min_value=0, max_value=365, value=0, step=1)
+        subscription_type = col_1.selectbox("Subscription Type", options=["Basic", "Standard", "Premium"])
+        contract_length = col_2.selectbox("Contract Length", options=["Monthly", "Quarterly", "Annual"])
+        total_spend = col_1.number_input("Total Spend", min_value=0.0, value=100.0, step=0.01, format="%.2f")
+        last_interaction = col_2.number_input("Last Interaction (days ago)", min_value=0, max_value=365, value=7, step=1)
+
+        data_inf = {
+            "age": age,
+            "gender": gender,
+            "tenure": tenure,
+            "usage_frequency": usage_frequency,
+            "support_calls": support_calls,
+            "payment_delay": payment_delay,
+            "subscription_type": subscription_type,
+            "contract_length": contract_length,
+            "total_spend": total_spend,
+            "last_interaction": last_interaction
+        }
+
+        if st.button("Predict"):
+            data_inf = pd.DataFrame([data_inf])
+            st.write(data_inf.T)
