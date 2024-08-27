@@ -154,7 +154,6 @@ def run():
                         mime="application/vnd.ms-excel"
                     )
 
-    
     # form upload file
     if input_type == "Upload Excel or CSV file":
         col_1, col_2 = st.columns([1, 1])
