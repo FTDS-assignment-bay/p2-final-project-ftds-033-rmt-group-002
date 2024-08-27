@@ -22,10 +22,14 @@ def run():
         else:
             # predict churn
             churn_pred = model_predict.predict(df)
-            if churn_pred == "Churn":
-                df["churn"] = True
-            else:
-                df["churn"] = False
+            df["churn"] = churn_pred
+
+            # debug
+            # st.write(churn_pred)
+            # st.write(df)
+            #
+            
+            df["churn"] = df["churn"].replace({"Churn": True, "Non_Churn": False})
             
             # filter df by churn = true
             df_churn = df[df["churn"] == True]
@@ -53,7 +57,8 @@ def run():
                 # result interface
                 st.subheader("Result:")
                 st.write(f"`{total_customer_churn} customers` from {total_customer} are predicted as churn.")
-                st.write("Customer Desciption:")
+                st.markdown('---')
+                st.write("Customer Churn Desciption:")
 
                 c_0 = ""
                 c_1 = ""
@@ -154,10 +159,10 @@ def run():
     if input_type == "Upload Excel or CSV file":
         col_1, col_2 = st.columns([1, 1])
 
-        with open("data_test.xlsx", "rb") as file:
+        with open("customer_example.xlsx", "rb") as file:
             col_1.download_button(
                 label = "Download Data Example",
-                icon = "download_for_offline",
+                # icons = "download_for_offline",
                 data = file,
                 file_name = "customer_example.xlsx",
                 mime = "application/vnd.ms-excel"
@@ -166,11 +171,13 @@ def run():
         with open("template.xlsx", "rb") as file:
             col_2.download_button(
                 label = "Download Excel Template",
-                icon = "download_for_offline",
+                # icons = "download_for_offline",
                 data = file,
                 file_name = "template.xlsx",
                 mime = "application/vnd.ms-excel"
             )
+        
+        st.markdown('---')
         
         uploaded_file = st.file_uploader("Choose Excel or CSV file", type=["csv", "xlsx"], accept_multiple_files=False)
         if uploaded_file is not None:
