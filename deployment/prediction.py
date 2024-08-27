@@ -60,52 +60,57 @@ def run():
                 c_2 = ""
                 c_3 = ""
 
+                for c0 in df_cluster_0["age"]: c_0 += str(c0) + ", "
+                for c1 in df_cluster_1["age"]: c_1 += str(c1) + ", "
+                for c2 in df_cluster_2["age"]: c_2 += str(c2) + ", "
+                for c3 in df_cluster_3["age"]: c_3 += str(c3) + ", "
+
                 cluster_0 = '''
-                    - 
-                    - 
-                    - 
+                    - cluster 0
+                    - cluster 0
+                    - cluster 0
                 '''
 
                 recommendation_0 = '''
-                    -
-                    -
-                    -
+                    - rekomendasi 0
+                    - rekomendasi 0
+                    - rekomendasi 0
                 '''
 
                 cluster_1 = '''
-                    - 
-                    - 
-                    - 
+                    - cluster 1
+                    - cluster 1
+                    - cluster 1
                 '''
 
                 recommendation_1 = '''
-                    -
-                    -
-                    -
+                    - rekomendasi 1
+                    - rekomendasi 1
+                    - rekomendasi 1
                 '''
 
                 cluster_2 = '''
-                    - 
-                    - 
-                    - 
+                    - cluster 2
+                    - cluster 2
+                    - cluster 2
                 '''
 
                 recommendation_2 = '''
-                    -
-                    -
-                    -
+                    - rekomendasi 2
+                    - rekomendasi 2
+                    - rekomendasi 2
                 '''
 
                 cluster_3 = '''
-                    - 
-                    - 
-                    - 
+                    - cluster 3
+                    - cluster 3
+                    - cluster 3
                 '''
 
                 recommendation_3 = '''
-                    -
-                    -
-                    -
+                    - rekomendasi 3
+                    - rekomendasi 3
+                    - rekomendasi 3
                 '''
 
                 if c_0 != "":
@@ -136,14 +141,14 @@ def run():
                     st.write(recommendation_3)
                     st.markdown('---')
 
-                with open("model_result.xlsx", "rb") as file:
+                with open("result.xlsx", "rb") as file:
                     st.download_button(
-                        label = "Download Prediction Result",
-                        icon = "download_for_offline",
-                        data = file,
-                        file_name = "model_result.xlsx",
-                        mime = "application/vnd.ms-excel"
-                )
+                        label="Download Prediction Result",
+                        data=file,
+                        file_name="result.xlsx",
+                        mime="application/vnd.ms-excel"
+                    )
+
     
     # form upload file
     if input_type == "Upload Excel or CSV file":
@@ -208,3 +213,7 @@ def run():
         if st.button("Predict"):
             data_inf = pd.DataFrame([data_inf])
             st.write(data_inf.T)
+            predict_data(data_inf)
+
+if __name__ == "__main__":
+    run()
