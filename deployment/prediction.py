@@ -201,51 +201,49 @@ def run():
                 for c3 in df_non_churn_cluster_3["churn"]: c_3 += str(c3) + ", "
 
                 cluster_0 = '''
-                    - cluster 0 non churn
-                    - cluster 0 non churn
-                    - cluster 0 non churn
+                    - cluster 0 merupakan kelompok customer yang memiliki daya beli yang tinggi dan efisien.
+                    - cluster 0 cenderung mengambil contract length annually (tahunan) atau quarterly (per 3 bulan) dibanding mengambil monthly (bulanan).
+                    - cluster 0 bisa dikatakan kelompok customer yang sering belanja dan mengutamakan hemat.
                 '''
 
                 recommendation_0 = '''
-                    - `Upsell Opportunities:` Promote upgrades to premium packages or additional services that offer more benefits.
-                    - `Loyalty Programs:` Implement loyalty programs that offer rewards or additional benefits for long-term customers.
-                    - `Early Access and Exclusivity:` Provide early access to promotions or new products to reward loyalty and maintain customer engagement.
+                    - `Discount Strategy:` Berikan diskon atau layanan eksklusif yang disesuaikan untuk mendorong pelanggan memperpanjang langganan mereka dan meningkatkan loyalitas.
+                    - `Enhance customer support:` Perkuat layanan pelanggan, terutama bagi mereka yang menghadapi masalah teknis, untuk mengurangi ketidakpuasan dan potensi churn.
+                    - `Flexible payment strategy:` Perkenalkan opsi pembayaran yang lebih fleksibel untuk meminimalkan keterlambatan pembayaran dan meningkatkan retensi pelanggan.
                 '''
 
                 cluster_1 = '''
-                    - cluster 1 non churn
-                    - cluster 1 non churn
-                    - cluster 1 non churn
+                    - cluster 1 merupakan kelompok customer yang memiliki daya beli yang lebih tinggi dan juga efisien seperti cluster 0.
+                    - cluster 1 paling banyak mengambil contract length annually (tahunan) atau quarterly (per 3 bulan) dibanding mengambil monthly (bulanan).
+                    - cluster 1 bisa dikatakan kelompok customer yang sering belanja.
                 '''
 
                 recommendation_1 = '''
-                    - `Reward Programs:` Reward their loyalty with reward programs or service upgrades at no additional cost.
-                    - `Exclusive Events and Content:` Host exclusive events or content only for loyal customers to enhance exclusivity and satisfaction.
-                    - `Feedback Loop:` Regularly gather feedback to continuously improve service quality and meet the needs of premium customers.
+                    - `Discount Strategy:` Berikan diskon atau layanan eksklusif yang disesuaikan untuk mendorong pelanggan memperpanjang langganan mereka dan meningkatkan loyalitas.
+                    - `Enhance customer support:` Perkuat layanan pelanggan, terutama bagi mereka yang menghadapi masalah teknis, untuk mengurangi ketidakpuasan dan potensi churn.
+                    - `Flexible payment strategy:` Perkenalkan opsi pembayaran yang lebih fleksibel untuk meminimalkan keterlambatan pembayaran dan meningkatkan retensi pelanggan.
                 '''
 
                 cluster_2 = '''
-                    - cluster 2 non churn
-                    - cluster 2 non churn
-                    - cluster 2 non churn
+                    - cluster 2 merupakan kelompok customer yang memiliki daya beli yang cukup.
+                    - cluster 2 cenderung mengambil contract length monthly (secara bulanan) dari pada quarterly atau annually.
+                    - cluster 2 dapat dikatakan bahwa customer dengan cluster ini adalah karyawan yang menerima gaji secara bulanan/customer yang hanya membutuhkan membership untuk jangka waktu yang pendek.
                 '''
 
                 recommendation_2 = '''
-                    - `Incentivize Annual Commitments:` Provide incentives for customers to extend their subscriptions to annual packages to improve revenue stability.
-                    - `Product Bundling:` Offer attractive product or service bundles to increase their total spend
-                    - `Enhanced Customer Service:` Provide premium customer service or dedicated support to encourage satisfaction and loyalty.
+                    - `Sales Strategy:` Alihkan contract length cluster ini dari monthly menjadi annually.
+                    - `Marketing Strategy:` Tingkatkan marketing terkait manfaat-manfaat mengambil membership annually. Bisa jadi cluster ini belum mengetahui manfaat yang didapatkannya apabila mengambil contract length secara tahunan.
                 '''
 
                 cluster_3 = '''
-                    - cluster 3 non churn
-                    - cluster 3 non churn
-                    - cluster 3 non churn
+                    - cluster 3 merupakan kelompok customer yang memiliki daya beli lebih tinggi daripada cluster 2 tetapi tidak lebih besar dari cluster 0 dan 1.
+                    - cluster 3 cenderung mengambil contract length monthly (secara bulanan) dari pada quarterly atau annually.
+                    - cluster 3 dapat dikatakan bahwa customer dengan cluster ini adalah karyawan yang menerima gaji secara bulanan/customer yang hanya membutuhkan membership untuk jangka waktu yang pendek.
                 '''
 
                 recommendation_3 = '''
-                    - `Referral Programs:` Encourage customers to refer friends and family by offering incentives for each successful referral.
-                    - `Tailored Offers:` Create personalized offers based on purchase history to increase their total spend.
-                    - `Long-Term Commitments:` Provide incentives for extending annual contracts or other long-term packages to retain customers.
+                    - `Sales Strategy:` Alihkan contract length cluster ini dari monthly menjadi annually.
+                    - `Marketing Strategy:` Tingkatkan marketing terkait manfaat-manfaat mengambil membership annually. Bisa jadi cluster ini belum mengetahui manfaat yang didapatkannya apabila mengambil contract length secara tahunan.
                 '''
                 
                 # split vertical line
