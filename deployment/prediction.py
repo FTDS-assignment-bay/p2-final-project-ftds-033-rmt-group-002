@@ -74,51 +74,49 @@ def run():
                 for c3 in df_cluster_3["churn"]: c_3 += str(c3) + ", "
 
                 cluster_0 = '''
-                    - cluster 0
-                    - cluster 0
-                    - cluster 0
+                    - cluster 0 merupakan kelompok customer yang memiliki daya beli yang tinggi dan efisien.
+                    - cluster 0 cenderung mengambil contract length annually (tahunan) atau quarterly (per 3 bulan) dibanding mengambil monthly (bulanan).
+                    - cluster 0 bisa dikatakan kelompok customer yang sering belanja dan mengutamakan hemat.
                 '''
 
                 recommendation_0 = '''
-                    - `Personalized Retention Offers:` Offer discounts or additional exclusive services to extend subscriptions and increase loyalty.
-                    - `Enhanced Customer Support:` Improve customer response and support, especially for those facing technical issues to reduce dissatisfaction.
-                    - `Flexible Payment Plans:` Provide more flexible payment plans to reduce the risk of late payments and retain customers.
+                    - `Discount Strategy:` Berikan diskon atau layanan eksklusif yang disesuaikan untuk mendorong pelanggan memperpanjang langganan mereka dan meningkatkan loyalitas.
+                    - `Enhance customer support:` Perkuat layanan pelanggan, terutama bagi mereka yang menghadapi masalah teknis, untuk mengurangi ketidakpuasan dan potensi churn.
+                    - `Flexible payment strategy:` Perkenalkan opsi pembayaran yang lebih fleksibel untuk meminimalkan keterlambatan pembayaran dan meningkatkan retensi pelanggan.
                 '''
 
                 cluster_1 = '''
-                    - cluster 1
-                    - cluster 1
-                    - cluster 1
+                    - cluster 1 merupakan kelompok customer yang memiliki daya beli yang lebih tinggi dan juga efisien seperti cluster 0.
+                    - cluster 1 paling banyak mengambil contract length annually (tahunan) atau quarterly (per 3 bulan) dibanding mengambil monthly (bulanan).
+                    - cluster 1 bisa dikatakan kelompok customer yang sering belanja.
                 '''
 
                 recommendation_1 = '''
-                    - `Customer Re-engagement Campaigns:` Launch campaigns targeting customers with low last interaction to remind them of the benefits of membership.
-                    - `Reduce Payment Friction:` Simplify the payment process and provide automatic reminders to avoid late payments.
-                    - `Proactive Issue Resolution:` Address technical or service issues before customers decide to cancel their subscriptions.
+                    - `Discount Strategy:` Berikan diskon atau layanan eksklusif yang disesuaikan untuk mendorong pelanggan memperpanjang langganan mereka dan meningkatkan loyalitas.
+                    - `Enhance customer support:` Perkuat layanan pelanggan, terutama bagi mereka yang menghadapi masalah teknis, untuk mengurangi ketidakpuasan dan potensi churn.
+                    - `Flexible payment strategy:` Perkenalkan opsi pembayaran yang lebih fleksibel untuk meminimalkan keterlambatan pembayaran dan meningkatkan retensi pelanggan.
                 '''
 
                 cluster_2 = '''
-                    - cluster 2
-                    - cluster 2
-                    - cluster 2
+                    - cluster 2 merupakan kelompok customer yang memiliki daya beli yang cukup.
+                    - cluster 2 cenderung mengambil contract length monthly (secara bulanan) dari pada quarterly atau annually.
+                    - cluster 2 dapat dikatakan bahwa customer dengan cluster ini adalah karyawan yang menerima gaji secara bulanan/customer yang hanya membutuhkan membership untuk jangka waktu yang pendek.
                 '''
 
                 recommendation_2 = '''
-                    - `Financial Assistance Programs:` Offer financial assistance or installment plans to help customers pay for subscriptions and reduce churn.
-                    - `Issue Resolution Initiatives:` Focus on resolving common issues faced by customers in this cluster, such as slow support or technical problems.
-                    - `Retention Offers:` Launch special offers, such as discounts or additional free subscription time, to encourage them to stay with the service.
+                    - `Sales Strategy:` Alihkan contract length cluster ini dari monthly menjadi annually.
+                    - `Marketing Strategy:` Tingkatkan marketing terkait manfaat-manfaat mengambil membership annually. Bisa jadi cluster ini belum mengetahui manfaat yang didapatkannya apabila mengambil contract length secara tahunan.
                 '''
 
                 cluster_3 = '''
-                    - cluster 3
-                    - cluster 3
-                    - cluster 3
+                    - cluster 3 merupakan kelompok customer yang memiliki daya beli lebih tinggi daripada cluster 2 tetapi tidak lebih besar dari cluster 0 dan 1.
+                    - cluster 3 cenderung mengambil contract length monthly (secara bulanan) dari pada quarterly atau annually.
+                    - cluster 3 dapat dikatakan bahwa customer dengan cluster ini adalah karyawan yang menerima gaji secara bulanan/customer yang hanya membutuhkan membership untuk jangka waktu yang pendek.
                 '''
 
                 recommendation_3 = '''
-                    - `Personalized Support:` Provide more personalized and attentive support for older customers who may need more assistance.
-                    - `Flexible Contract Options:` Offer more flexible contract options to better match customers' financial needs and reduce the risk of churn.
-                    - `Retention Campaigns:` Launch campaigns targeting customers with frequent late payments to encourage timely payments and reduce churn.
+                    - `Sales Strategy:` Alihkan contract length cluster ini dari monthly menjadi annually.
+                    - `Marketing Strategy:` Tingkatkan marketing terkait manfaat-manfaat mengambil membership annually. Bisa jadi cluster ini belum mengetahui manfaat yang didapatkannya apabila mengambil contract length secara tahunan.
                 '''
                 
                 # vertical line slit
