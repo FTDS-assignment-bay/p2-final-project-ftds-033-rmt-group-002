@@ -39,7 +39,7 @@ def run():
 
             # predict churn cluster
             if total_customer_churn == 0:
-                st.write("No Customer predicted as `Churn`.")
+                st.subheader("No Customer predicted as `Churn`.")
             else:
                 cluster_pred = model_cluster.predict(df_churn)
                 df_churn["cluster"] = cluster_pred
@@ -57,7 +57,7 @@ def run():
 
                 # result interface
                 st.subheader("Result of `Churn` Customer:")
-                st.write(f"`{total_customer_churn} customers` from {total_customer} are predicted as `Churn`.")
+                st.subheader(f"`{total_customer_churn} customers` from {total_customer} are predicted as `Churn`.")
                 st.markdown('---')
                 
                 # col split
@@ -74,9 +74,9 @@ def run():
                 for c3 in df_cluster_3["churn"]: c_3 += str(c3) + ", "
 
                 cluster_0 = '''
-                    - cluster 0 merupakan kelompok customer yang memiliki daya beli yang tinggi dan efisien.
-                    - cluster 0 cenderung mengambil contract length annually (tahunan) atau quarterly (per 3 bulan) dibanding mengambil monthly (bulanan).
-                    - cluster 0 bisa dikatakan kelompok customer yang sering belanja dan mengutamakan hemat.
+                    - Merupakan kelompok customer yang memiliki daya beli yang tinggi dan efisien.
+                    - Cenderung mengambil contract length annually (tahunan) atau quarterly (per 3 bulan) dibanding mengambil monthly (bulanan).
+                    - Bisa dikatakan kelompok customer yang sering belanja dan mengutamakan hemat.
                 '''
 
                 recommendation_0 = '''
@@ -86,9 +86,9 @@ def run():
                 '''
 
                 cluster_1 = '''
-                    - cluster 1 merupakan kelompok customer yang memiliki daya beli yang lebih tinggi dan juga efisien seperti cluster 0.
-                    - cluster 1 paling banyak mengambil contract length annually (tahunan) atau quarterly (per 3 bulan) dibanding mengambil monthly (bulanan).
-                    - cluster 1 bisa dikatakan kelompok customer yang sering belanja.
+                    - Merupakan kelompok customer yang memiliki daya beli yang lebih tinggi dan juga efisien seperti cluster 0.
+                    - Paling banyak mengambil contract length annually (tahunan) atau quarterly (per 3 bulan) dibanding mengambil monthly (bulanan).
+                    - Bisa dikatakan kelompok customer yang sering belanja.
                 '''
 
                 recommendation_1 = '''
@@ -98,9 +98,9 @@ def run():
                 '''
 
                 cluster_2 = '''
-                    - cluster 2 merupakan kelompok customer yang memiliki daya beli yang cukup.
-                    - cluster 2 cenderung mengambil contract length monthly (secara bulanan) dari pada quarterly atau annually.
-                    - cluster 2 dapat dikatakan bahwa customer dengan cluster ini adalah karyawan yang menerima gaji secara bulanan/customer yang hanya membutuhkan membership untuk jangka waktu yang pendek.
+                    - Merupakan kelompok customer yang memiliki daya beli yang cukup.
+                    - Cenderung mengambil contract length monthly (secara bulanan) dari pada quarterly atau annually.
+                    - Dapat dikatakan bahwa customer dengan cluster ini adalah karyawan yang menerima gaji secara bulanan/customer yang hanya membutuhkan membership untuk jangka waktu yang pendek.
                 '''
 
                 recommendation_2 = '''
@@ -109,9 +109,9 @@ def run():
                 '''
 
                 cluster_3 = '''
-                    - cluster 3 merupakan kelompok customer yang memiliki daya beli lebih tinggi daripada cluster 2 tetapi tidak lebih besar dari cluster 0 dan 1.
-                    - cluster 3 cenderung mengambil contract length monthly (secara bulanan) dari pada quarterly atau annually.
-                    - cluster 3 dapat dikatakan bahwa customer dengan cluster ini adalah karyawan yang menerima gaji secara bulanan/customer yang hanya membutuhkan membership untuk jangka waktu yang pendek.
+                    - Merupakan kelompok customer yang memiliki daya beli lebih tinggi daripada cluster 2 tetapi tidak lebih besar dari cluster 0 dan 1.
+                    - Cenderung mengambil contract length monthly (secara bulanan) dari pada quarterly atau annually.
+                    - Dapat dikatakan bahwa customer dengan cluster ini adalah karyawan yang menerima gaji secara bulanan/customer yang hanya membutuhkan membership untuk jangka waktu yang pendek.
                 '''
 
                 recommendation_3 = '''
@@ -131,37 +131,37 @@ def run():
                 #     unsafe_allow_html=True
                 # )
 
-                st.write("Customer Churn Description:")
+                st.write("#### Churn Customer Description:")
 
                 # res_churn.write("Customer Churn Description:")
                 # res_non_churn.write("Customer Non Churn Description:")
                 
                 # with res_churn:
                 if c_0 != "":
-                    st.write(f"Cluster 0: `{len(df_cluster_0)}` customer(s)")
+                    st.write(f"##### `Monthly Spender`: `{len(df_cluster_0)}` customer(s)")
                     st.write(cluster_0)
-                    st.write("Recommendation:")
+                    st.write("##### Recommendation:")
                     st.write(recommendation_0)
                     st.markdown('---')
                 
                 if c_1 != "":
-                    st.write(f"Cluster 1: `{len(df_cluster_1)}` customer(s)")
+                    st.write(f"##### `Frequent Spender`: `{len(df_cluster_1)}` customer(s)")
                     st.write(cluster_1)
-                    st.write("Recommendation:")
+                    st.write("##### Recommendation:")
                     st.write(recommendation_1)
                     st.markdown('---')
                 
                 if c_2 != "":
-                    st.write(f"Cluster 2: `{len(df_cluster_2)}` customer(s)")
+                    st.write(f"##### `Young Risk`: `{len(df_cluster_2)}` customer(s)")
                     st.write(cluster_2)
-                    st.write("Recommendation:")
+                    st.write("##### Recommendation:")
                     st.write(recommendation_2)
                     st.markdown('---')
 
                 if c_3 != "":
-                    st.write(f"Cluster 3: `{len(df_cluster_3)}` customer(s)")
+                    st.write(f"##### `Older Risk`: `{len(df_cluster_3)}` customer(s)")
                     st.write(cluster_3)
-                    st.write("Recommendation:")
+                    st.write("##### Recommendation:")
                     st.write(recommendation_3)
                     st.markdown('---')
 
@@ -201,9 +201,9 @@ def run():
                 for c3 in df_non_churn_cluster_3["churn"]: c_3 += str(c3) + ", "
 
                 cluster_0 = '''
-                    - cluster 0 merupakan kelompok customer yang memiliki daya beli yang tinggi dan efisien.
-                    - cluster 0 cenderung mengambil contract length annually (tahunan) atau quarterly (per 3 bulan) dibanding mengambil monthly (bulanan).
-                    - cluster 0 bisa dikatakan kelompok customer yang sering belanja dan mengutamakan hemat.
+                    - Merupakan kelompok customer yang memiliki daya beli yang tinggi dan efisien.
+                    - Cenderung mengambil contract length annually (tahunan) atau quarterly (per 3 bulan) dibanding mengambil monthly (bulanan).
+                    - Bisa dikatakan kelompok customer yang sering belanja dan mengutamakan hemat.
                 '''
 
                 recommendation_0 = '''
@@ -213,9 +213,9 @@ def run():
                 '''
 
                 cluster_1 = '''
-                    - cluster 1 merupakan kelompok customer yang memiliki daya beli yang lebih tinggi dan juga efisien seperti cluster 0.
-                    - cluster 1 paling banyak mengambil contract length annually (tahunan) atau quarterly (per 3 bulan) dibanding mengambil monthly (bulanan).
-                    - cluster 1 bisa dikatakan kelompok customer yang sering belanja.
+                    - Merupakan kelompok customer yang memiliki daya beli yang lebih tinggi dan juga efisien seperti cluster 0.
+                    - Paling banyak mengambil contract length annually (tahunan) atau quarterly (per 3 bulan) dibanding mengambil monthly (bulanan).
+                    - Bisa dikatakan kelompok customer yang sering belanja.
                 '''
 
                 recommendation_1 = '''
@@ -225,9 +225,9 @@ def run():
                 '''
 
                 cluster_2 = '''
-                    - cluster 2 merupakan kelompok customer yang memiliki daya beli yang cukup.
-                    - cluster 2 cenderung mengambil contract length monthly (secara bulanan) dari pada quarterly atau annually.
-                    - cluster 2 dapat dikatakan bahwa customer dengan cluster ini adalah karyawan yang menerima gaji secara bulanan/customer yang hanya membutuhkan membership untuk jangka waktu yang pendek.
+                    - Merupakan kelompok customer yang memiliki daya beli yang cukup.
+                    - Cenderung mengambil contract length monthly (secara bulanan) dari pada quarterly atau annually.
+                    - Dapat dikatakan bahwa customer dengan cluster ini adalah karyawan yang menerima gaji secara bulanan/customer yang hanya membutuhkan membership untuk jangka waktu yang pendek.
                 '''
 
                 recommendation_2 = '''
@@ -236,9 +236,9 @@ def run():
                 '''
 
                 cluster_3 = '''
-                    - cluster 3 merupakan kelompok customer yang memiliki daya beli lebih tinggi daripada cluster 2 tetapi tidak lebih besar dari cluster 0 dan 1.
-                    - cluster 3 cenderung mengambil contract length monthly (secara bulanan) dari pada quarterly atau annually.
-                    - cluster 3 dapat dikatakan bahwa customer dengan cluster ini adalah karyawan yang menerima gaji secara bulanan/customer yang hanya membutuhkan membership untuk jangka waktu yang pendek.
+                    - Merupakan kelompok customer yang memiliki daya beli lebih tinggi daripada cluster 2 tetapi tidak lebih besar dari cluster 0 dan 1.
+                    - Cenderung mengambil contract length monthly (secara bulanan) dari pada quarterly atau annually.
+                    - Dapat dikatakan bahwa customer dengan cluster ini adalah karyawan yang menerima gaji secara bulanan/customer yang hanya membutuhkan membership untuk jangka waktu yang pendek.
                 '''
 
                 recommendation_3 = '''
@@ -258,33 +258,33 @@ def run():
                 #     unsafe_allow_html=True
                 # )
 
-                st.write("Customer Non Churn Description:")
+                st.write("#### Non Churn Customer Description:")
                 
                 if c_0 != "":
-                    st.write(f"Cluster 0: `{len(df_non_churn_cluster_0)}` customer(s)")
+                    st.write(f"##### `Monthly Spender`: `{len(df_non_churn_cluster_0)}` customer(s)")
                     st.write(cluster_0)
-                    st.write("Recommendation:")
+                    st.write("##### Recommendation:")
                     st.write(recommendation_0)
                     st.markdown('---')
                 
                 if c_1 != "":
-                    st.write(f"Cluster 1: `{len(df_non_churn_cluster_1)}` customer(s)")
+                    st.write(f"##### `Frequent Spender`: `{len(df_non_churn_cluster_1)}` customer(s)")
                     st.write(cluster_1)
-                    st.write("Recommendation:")
+                    st.write("##### Recommendation:")
                     st.write(recommendation_1)
                     st.markdown('---')
                 
                 if c_2 != "":
-                    st.write(f"Cluster 2: `{len(df_non_churn_cluster_2)}` customer(s)")
+                    st.write(f"##### `Young Risk`: `{len(df_non_churn_cluster_2)}` customer(s)")
                     st.write(cluster_2)
                     st.write("Recommendation:")
                     st.write(recommendation_2)
                     st.markdown('---')
 
                 if c_3 != "":
-                    st.write(f"Cluster 3: `{len(df_non_churn_cluster_3)}` customer(s)")
+                    st.write(f"##### `Older Risk`: `{len(df_non_churn_cluster_3)}` customer(s)")
                     st.write(cluster_3)
-                    st.write("Recommendation:")
+                    st.write("##### Recommendation:")
                     st.write(recommendation_3)
                     st.markdown('---')
 
