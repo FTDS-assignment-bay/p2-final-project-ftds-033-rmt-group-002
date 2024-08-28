@@ -1,4 +1,5 @@
-![Header Image](deployment/Locana.png)
+<!-- ![Header Image](deployment/Locana.png) -->
+<img src="deployment/Locana.png" alt="Locana" width="200"/>
 
 # Locana
 Proyek kami fokus pada memprediksi churn pelanggan untuk membantu bisnis mempertahankan pelanggan yang paling berharga.\
