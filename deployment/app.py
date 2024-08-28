@@ -3,17 +3,23 @@ from streamlit_option_menu import option_menu
 import about
 import eda
 import prediction
+from PIL import Image
 
-st.header("Locana")
-st.write("Customer Insight")
+col1, col2, col3, col4, col5= st.columns(5)
+
+imglogo = Image.open("Locana.png")
+img = imglogo.resize(size=(100,80))
+col2.image(img)
+col1.header("Locana")
+st.write("##### Melihat Churn, Mengunci Kesetiaan")
 st.markdown('---')
 
 with st.sidebar:
-    st.subheader("Locana")
+    st.header("**Locana**")
     # st.write("Predict Tomorrow, Act Today")
 
-    st.subheader("Select Page")
-    selected = option_menu(None, ["About", "Exploratory Data Analysis", "Predict"], 
+    st.subheader("Halaman")
+    selected = option_menu(None, ["Tentang Kami", "Eksplorasi Data", "Prediksi"], 
         icons=['house', 'file-earmark-bar-graph', 'search'], 
         menu_icon="cast", default_index=0, orientation="vertical",
         styles={
@@ -29,9 +35,9 @@ with st.sidebar:
     # st.write("Yuzal Qushoyyi Wahyudi")
 
     
-if selected == "About":
+if selected == "Tentang Kami":
     about.run()
-elif selected == "Exploratory Data Analysis":
+elif selected == "Eksplorasi Data":
     eda.run()
 else:
     prediction.run()
