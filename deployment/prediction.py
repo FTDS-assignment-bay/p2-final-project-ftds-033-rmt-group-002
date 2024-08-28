@@ -77,9 +77,9 @@ def run():
                 '''
 
                 recommendation_0 = '''
-                    - `Enhance customer support:` Perkuat layanan pelanggan, terutama bagi mereka yang menghadapi masalah teknis, untuk mengurangi ketidakpuasan dan potensi churn.
-                    - `Sales Strategy:` Fokuskan customer pada kelompok ini beralih menjadi membership annual.
-                    - `Marketing Strategy:` Tingkatkan marketing terkait manfaat-manfaat mengambil membership annually. Bisa jadi cluster ini belum mengetahui manfaat yang didapatkannya apabila mengambil contract length secara tahunan.
+                    - `Berikan diskon atau tambahan layanan eksklusif` untuk memperpanjang masa langganan dan meningkatkan loyalitas.
+                    - `Perbaiki respons dan dukungan pelanggan`, terutama bagi yang mengalami masalah teknis untuk mengurangi ketidakpuasan.
+                    - `Tawarkan rencana pembayaran yang lebih fleksibel` untuk mengurangi risiko keterlambatan pembayaran dan mempertahankan pelanggan.
                 '''
 
                 cluster_1 = '''
@@ -89,9 +89,9 @@ def run():
                 '''
 
                 recommendation_1 = '''
-                    - `Enhance customer support:` Perkuat layanan pelanggan, terutama bagi mereka yang menghadapi masalah teknis, untuk mengurangi ketidakpuasan dan potensi churn.
-                    - `Sales Strategy:` Fokuskan customer pada kelompok ini beralih menjadi membership annual.
-                    - `Marketing Strategy:` Tingkatkan marketing terkait manfaat-manfaat mengambil membership annually. Bisa jadi cluster ini belum mengetahui manfaat yang didapatkannya apabila mengambil contract length secara tahunan.
+                    - `Kampanye` yang menargetkan pelanggan dengan interaksi terakhir yang rendah untuk mengingatkan mereka akan `manfaat keanggotaan`.
+                    - `Simplifikasi proses pembayaran` dan berikan pengingat otomatis untuk menghindari keterlambatan pembayaran.
+                    - `Selesaikan masalah teknis` atau pelayanan sebelum pelanggan memutuskan untuk berhenti berlangganan.
                 '''
 
                 cluster_2 = '''
@@ -101,9 +101,9 @@ def run():
                 '''
 
                 recommendation_2 = '''
-                    - `Enhance customer support:` Perkuat layanan pelanggan, terutama bagi mereka yang menghadapi masalah teknis, untuk mengurangi ketidakpuasan dan potensi churn.
-                    - `Sales Strategy:` Fokuskan customer pada kelompok ini beralih menjadi membership annual.
-                    - `Marketing Strategy:` Tingkatkan marketing terkait manfaat-manfaat mengambil membership annually. Bisa jadi cluster ini belum mengetahui manfaat yang didapatkannya apabila mengambil contract length secara tahunan.
+                    - `Tawarkan bantuan keuangan` atau cicilan untuk membantu pelanggan dalam membayar langganan dan mengurangi churn.
+                    - `Fokus pada penyelesaian masalah` yang sering dihadapi pelanggan dalam kelompok ini, seperti layanan dukungan yang lambat atau masalah teknis.
+                    - `Memberikan penawaran khusus`, seperti diskon atau tambahan waktu langganan gratis, untuk mendorong mereka tetap menggunakan layanan.
                 '''
 
                 cluster_3 = '''
@@ -113,9 +113,9 @@ def run():
                 '''
 
                 recommendation_3 = '''
-                    - `Enhance customer support:` Perkuat layanan pelanggan, terutama bagi mereka yang menghadapi masalah teknis, untuk mengurangi ketidakpuasan dan potensi churn.
-                    - `Sales Strategy:` Fokuskan customer pada kelompok ini beralih menjadi membership annual.
-                    - `Marketing Strategy:` Tingkatkan marketing terkait manfaat-manfaat mengambil membership annually. Bisa jadi cluster ini belum mengetahui manfaat yang didapatkannya apabila mengambil contract length secara tahunan.
+                    - `Sediakan dukungan yang lebih personal` dan perhatian untuk pelanggan yang lebih tua, yang mungkin memerlukan lebih banyak bantuan.
+                    - `Tawarkan opsi kontrak` yang lebih fleksibel untuk menyesuaikan dengan kebutuhan keuangan pelanggan dan mengurangi risiko churn.
+                    - `Luncurkan kampanye yang menargetkan pelanggan dengan keterlambatan pembayaran` yang sering untuk mendorong pembayaran tepat waktu dan mengurangi churn.
                 '''
 
                 st.write("#### Deskripsi Customer yang `Churn`:")
@@ -191,9 +191,9 @@ def run():
                 '''
 
                 recommendation_0 = '''
-                    - `Discount Strategy:` Promosikan upgrade ke paket premium atau tambahan layanan yang menawarkan lebih banyak manfaat.
-                    - `Enhance customer support:` Perkuat layanan pelanggan, terutama bagi mereka yang menghadapi masalah teknis, untuk mengurangi ketidakpuasan dan potensi churn.
-                    - `Flexible payment strategy:` Perkenalkan opsi pembayaran yang lebih fleksibel untuk meminimalkan keterlambatan pembayaran dan meningkatkan retensi pelanggan.
+                    - `Promosikan upgrade ke paket premium` atau tambahan layanan yang menawarkan lebih banyak manfaat.
+                    - `Implementasikan program loyalitas` yang memberikan hadiah atau manfaat tambahan untuk pelanggan jangka panjang.
+                    - `Berikan akses awal ke promosi` atau produk baru untuk menghargai loyalitas pelanggan dan mempertahankan keterlibatan mereka.
                 '''
 
                 cluster_1 = '''
@@ -203,9 +203,9 @@ def run():
                 '''
 
                 recommendation_1 = '''
-                    - `Discount Strategy:` Berikan diskon atau layanan eksklusif yang disesuaikan untuk mendorong pelanggan memperpanjang langganan mereka dan meningkatkan loyalitas.
-                    - `Enhance customer support:` Perkuat layanan pelanggan, terutama bagi mereka yang menghadapi masalah teknis, untuk mengurangi ketidakpuasan dan potensi churn.
-                    - `Flexible payment strategy:` Perkenalkan opsi pembayaran yang lebih fleksibel untuk meminimalkan keterlambatan pembayaran dan meningkatkan retensi pelanggan.
+                    - `Hargai kesetiaan mereka dengan program hadiah` atau peningkatan layanan tanpa biaya tambahan.
+                    - `Adakan acara atau konten eksklusif` hanya untuk pelanggan setia untuk meningkatkan rasa eksklusivitas dan kepuasan.
+                    - `Kumpulkan feedback` secara rutin untuk terus meningkatkan kualitas layanan dan memenuhi kebutuhan pelanggan premium.
                 '''
 
                 cluster_2 = '''
@@ -215,8 +215,9 @@ def run():
                 '''
 
                 recommendation_2 = '''
-                    - `Sales Strategy:` Alihkan contract length cluster ini dari monthly menjadi annually.
-                    - `Marketing Strategy:` Tingkatkan marketing terkait manfaat-manfaat mengambil membership annually. Bisa jadi cluster ini belum mengetahui manfaat yang didapatkannya apabila mengambil contract length secara tahunan.
+                    - `Berikan insentif` untuk pelanggan yang memperpanjang langganan ke paket tahunan untuk meningkatkan stabilitas pendapatan.
+                    - `Tawarkan bundel produk` atau layanan yang menarik untuk meningkatkan total pengeluaran mereka.
+                    - `Berikan layanan pelanggan premium` atau dukungan khusus untuk mendorong kepuasan dan loyalitas.
                 '''
 
                 cluster_3 = '''
@@ -226,8 +227,9 @@ def run():
                 '''
 
                 recommendation_3 = '''
-                    - `Sales Strategy:` Alihkan contract length cluster ini dari monthly menjadi annually.
-                    - `Marketing Strategy:` Tingkatkan marketing terkait manfaat-manfaat mengambil membership annually. Bisa jadi cluster ini belum mengetahui manfaat yang didapatkannya apabila mengambil contract length secara tahunan.
+                    - `Dorong pelanggan untuk merujuk teman dan keluarga`, dengan menawarkan insentif bagi setiap rujukan yang berhasil.
+                    - `Buat penawaran yang dipersonalisasi` berdasarkan riwayat pembelian untuk meningkatkan total pengeluaran mereka.
+                    - `Berikan insentif untuk perpanjangan kontrak tahunan` atau paket jangka panjang lainnya untuk mempertahankan pelanggan.
                 '''
 
                 st.write("#### Deskripsi Loyal Customer:")
