@@ -86,7 +86,7 @@ def run():
                 '''
 
                 cluster_1 = '''
-                    - Merupakan kelompok customer yang memiliki daya beli yang lebih tinggi dan juga efisien seperti cluster 0.
+                    - Merupakan kelompok customer yang memiliki daya beli yang lebih tinggi dan juga efisien.
                     - Paling banyak mengambil contract length annually (tahunan) atau quarterly (per 3 bulan) dibanding mengambil monthly (bulanan).
                     - Bisa dikatakan kelompok customer yang sering belanja.
                 '''
@@ -109,7 +109,7 @@ def run():
                 '''
 
                 cluster_3 = '''
-                    - Merupakan kelompok customer yang memiliki daya beli lebih tinggi daripada cluster 2 tetapi tidak lebih besar dari cluster 0 dan 1.
+                    - Merupakan kelompok customer yang memiliki daya beli lebih tinggi daripada Young Risk tetapi tidak lebih besar dari Monthly Spender dan Frequent Spender.
                     - Cenderung mengambil contract length monthly (secara bulanan) dari pada quarterly atau annually.
                     - Dapat dikatakan bahwa customer dengan cluster ini adalah karyawan yang menerima gaji secara bulanan/customer yang hanya membutuhkan membership untuk jangka waktu yang pendek.
                 '''
@@ -118,25 +118,10 @@ def run():
                     - `Sales Strategy:` Alihkan contract length cluster ini dari monthly menjadi annually.
                     - `Marketing Strategy:` Tingkatkan marketing terkait manfaat-manfaat mengambil membership annually. Bisa jadi cluster ini belum mengetahui manfaat yang didapatkannya apabila mengambil contract length secara tahunan.
                 '''
-                
-                # vertical line slit
-                # st.markdown(
-                #     """
-                #     <style>
-                #     div[data-testid="column"]:nth-of-type(1) > div {
-                #         border-right: 2px solid grey;
-                #     }
-                #     </style>
-                #     """,
-                #     unsafe_allow_html=True
-                # )
 
                 st.write("#### Churn Customer Description:")
 
-                # res_churn.write("Customer Churn Description:")
-                # res_non_churn.write("Customer Non Churn Description:")
-                
-                # with res_churn:
+            
                 if c_0 != "":
                     st.write(f"##### `Monthly Spender`: `{len(df_cluster_0)}` customer(s)")
                     st.write(cluster_0)
@@ -213,7 +198,7 @@ def run():
                 '''
 
                 cluster_1 = '''
-                    - Merupakan kelompok customer yang memiliki daya beli yang lebih tinggi dan juga efisien seperti cluster 0.
+                    - Merupakan kelompok customer yang memiliki daya beli yang lebih tinggi dan juga efisien.
                     - Paling banyak mengambil contract length annually (tahunan) atau quarterly (per 3 bulan) dibanding mengambil monthly (bulanan).
                     - Bisa dikatakan kelompok customer yang sering belanja.
                 '''
@@ -236,7 +221,7 @@ def run():
                 '''
 
                 cluster_3 = '''
-                    - Merupakan kelompok customer yang memiliki daya beli lebih tinggi daripada cluster 2 tetapi tidak lebih besar dari cluster 0 dan 1.
+                    - Merupakan kelompok customer yang memiliki daya beli lebih tinggi daripada Young Risk tetapi tidak lebih besar dari Monthly Spender dan Frequent Spender.
                     - Cenderung mengambil contract length monthly (secara bulanan) dari pada quarterly atau annually.
                     - Dapat dikatakan bahwa customer dengan cluster ini adalah karyawan yang menerima gaji secara bulanan/customer yang hanya membutuhkan membership untuk jangka waktu yang pendek.
                 '''
@@ -245,20 +230,8 @@ def run():
                     - `Sales Strategy:` Alihkan contract length cluster ini dari monthly menjadi annually.
                     - `Marketing Strategy:` Tingkatkan marketing terkait manfaat-manfaat mengambil membership annually. Bisa jadi cluster ini belum mengetahui manfaat yang didapatkannya apabila mengambil contract length secara tahunan.
                 '''
-                
-                # split vertical line
-                # st.markdown(
-                #     """
-                #     <style>
-                #     div[data-testid="column"]:nth-of-type(1) > div {
-                #         border-right: 2px solid grey;
-                #     }
-                #     </style>
-                #     """,
-                #     unsafe_allow_html=True
-                # )
 
-                st.write("#### Non Churn Customer Description:")
+                st.write("#### Loyal Customer Description:")
                 
                 if c_0 != "":
                     st.write(f"##### `Monthly Spender`: `{len(df_non_churn_cluster_0)}` customer(s)")
@@ -347,16 +320,16 @@ def run():
     else:
     # form input
         col_1, col_2 = st.columns([1, 1])
-        age = col_1.number_input("Age", min_value=0, max_value=120, value=30, step=1)
+        age = col_1.number_input("Age", min_value=0, max_value=100, value=25, step=1)
         gender = col_2.selectbox("Gender", options=["Male", "Female"])
         tenure = col_1.number_input("Tenure (in months)", min_value=0, max_value=100, value=12, step=1)
-        usage_frequency = col_2.number_input("Usage Frequency (times per month)", min_value=0, max_value=100, value=10, step=1)
+        usage_frequency = col_2.number_input("Usage Frequency (times per month)", min_value=0, max_value=30, value=10, step=1)
         support_calls = col_1.number_input("Support Calls", min_value=0, max_value=100, value=5, step=1)
-        payment_delay = col_2.number_input("Payment Delay (days)", min_value=0, max_value=365, value=0, step=1)
+        payment_delay = col_2.number_input("Payment Delay (days)", min_value=0, max_value=30, value=0, step=1)
         subscription_type = col_1.selectbox("Subscription Type", options=["Basic", "Standard", "Premium"])
         contract_length = col_2.selectbox("Contract Length", options=["Monthly", "Quarterly", "Annual"])
         total_spend = col_1.number_input("Total Spend", min_value=0.0, value=100.0, step=0.01, format="%.2f")
-        last_interaction = col_2.number_input("Last Interaction (days ago)", min_value=0, max_value=365, value=7, step=1)
+        last_interaction = col_2.number_input("Last Interaction (days ago)", min_value=0, max_value=30, value=5, step=1)
 
         data_inf = {
             "age": age,
