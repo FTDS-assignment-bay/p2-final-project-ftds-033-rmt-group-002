@@ -37,19 +37,19 @@ def run():
     col1, col2, col3 = st.columns(3)
 
     with col1:
-        img1 = resize_image("team photo\FTDS-033-RMT - Astrila Ikhlasia Eprina.png")
+        img1 = resize_image("team photo/FTDS-033-RMT - Astrila Ikhlasia Eprina.png")
         st.image(img1)
         st.write("[**Astrila Ikhlasia Eprina**](https://www.linkedin.com/in/astrilalia/)")
         st.write("Data Analyst")
 
     with col2:
-        img2 = resize_image("team photo\FTDS-033-RMT - Muhammad Azhar Khaira.png.jpeg")
+        img2 = resize_image("team photo/FTDS-033-RMT - Muhammad Azhar Khaira.png.jpeg")
         st.image(img2)
         st.write("[**Muhammad Azhar Khaira**](https://www.linkedin.com/in/azharkhaira/)")
         st.write("Data Scientist")
 
     with col3:
-        img3 = resize_image("team photo\FTDS-033-RMT-Yuzal Qushoyyi Wahyudi.jpg")
+        img3 = resize_image("team photo/FTDS-033-RMT-Yuzal Qushoyyi Wahyudi.jpg")
         st.image(img3)
         st.write("[**Yuzal Qushoyyi Wahyudi**](https://www.linkedin.com/in/yuzalqushoyyiwahyudi/)")
         st.write("Data Engineer")

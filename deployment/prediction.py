@@ -3,7 +3,6 @@ import pandas as pd
 import joblib
 import os
 
-
 def run():
     # load model
     model_cluster = joblib.load("model_cluster.pkl")
@@ -31,14 +30,16 @@ def run():
             
             df["churn"] = df["churn"].replace({"Churn": True, "Non_Churn": False})
             
-            # filter df by churn = true
+            # filter df by churn
             df_churn = df[df["churn"] == True]
+            df_non_churn = df[df["churn"] == False]
 
             total_customer_churn = len(df_churn)
+            total_customer_non_churn = len(df_non_churn)
 
-            # predict cluster
+            # predict churn cluster
             if total_customer_churn == 0:
-                st.write("There is no Customer predicted as Churn from the Data!")
+                st.write("No Customer predicted as `Churn`.")
             else:
                 cluster_pred = model_cluster.predict(df_churn)
                 df_churn["cluster"] = cluster_pred
@@ -46,7 +47,7 @@ def run():
                 df_churn = df_churn.sort_values(by=["cluster"], ascending=True)
 
                 # save to excel
-                df_churn.to_excel("result.xlsx", index=False)
+                df.to_excel("result_churn.xlsx", index=False)
 
                 # df cluster
                 df_cluster_0 = df_churn[df_churn["cluster"] == 0]
@@ -55,102 +56,255 @@ def run():
                 df_cluster_3 = df_churn[df_churn["cluster"] == 3]
 
                 # result interface
-                st.subheader("Result:")
-                st.write(f"`{total_customer_churn} customers` from {total_customer} are predicted as churn.")
+                st.subheader("Result of `Churn` Customer:")
+                st.write(f"`{total_customer_churn} customers` from {total_customer} are predicted as `Churn`.")
                 st.markdown('---')
-                st.write("Customer Churn Desciption:")
+                
+                # col split
+                # res_churn, res_non_churn = st.columns([1, 1])
 
                 c_0 = ""
                 c_1 = ""
                 c_2 = ""
                 c_3 = ""
 
-                for c0 in df_cluster_0["age"]: c_0 += str(c0) + ", "
-                for c1 in df_cluster_1["age"]: c_1 += str(c1) + ", "
-                for c2 in df_cluster_2["age"]: c_2 += str(c2) + ", "
-                for c3 in df_cluster_3["age"]: c_3 += str(c3) + ", "
+                for c0 in df_cluster_0["churn"]: c_0 += str(c0) + ", "
+                for c1 in df_cluster_1["churn"]: c_1 += str(c1) + ", "
+                for c2 in df_cluster_2["churn"]: c_2 += str(c2) + ", "
+                for c3 in df_cluster_3["churn"]: c_3 += str(c3) + ", "
 
                 cluster_0 = '''
-                    - cluster 0
-                    - cluster 0
-                    - cluster 0
+                    - cluster 0 merupakan kelompok customer yang memiliki daya beli yang tinggi dan efisien.
+                    - cluster 0 cenderung mengambil contract length annually (tahunan) atau quarterly (per 3 bulan) dibanding mengambil monthly (bulanan).
+                    - cluster 0 bisa dikatakan kelompok customer yang sering belanja dan mengutamakan hemat.
                 '''
 
                 recommendation_0 = '''
-                    - rekomendasi 0
-                    - rekomendasi 0
-                    - rekomendasi 0
+                    - `Discount Strategy:` Berikan diskon atau layanan eksklusif yang disesuaikan untuk mendorong pelanggan memperpanjang langganan mereka dan meningkatkan loyalitas.
+                    - `Enhance customer support:` Perkuat layanan pelanggan, terutama bagi mereka yang menghadapi masalah teknis, untuk mengurangi ketidakpuasan dan potensi churn.
+                    - `Flexible payment strategy:` Perkenalkan opsi pembayaran yang lebih fleksibel untuk meminimalkan keterlambatan pembayaran dan meningkatkan retensi pelanggan.
                 '''
 
                 cluster_1 = '''
-                    - cluster 1
-                    - cluster 1
-                    - cluster 1
+                    - cluster 1 merupakan kelompok customer yang memiliki daya beli yang lebih tinggi dan juga efisien seperti cluster 0.
+                    - cluster 1 paling banyak mengambil contract length annually (tahunan) atau quarterly (per 3 bulan) dibanding mengambil monthly (bulanan).
+                    - cluster 1 bisa dikatakan kelompok customer yang sering belanja.
                 '''
 
                 recommendation_1 = '''
-                    - rekomendasi 1
-                    - rekomendasi 1
-                    - rekomendasi 1
+                    - `Discount Strategy:` Berikan diskon atau layanan eksklusif yang disesuaikan untuk mendorong pelanggan memperpanjang langganan mereka dan meningkatkan loyalitas.
+                    - `Enhance customer support:` Perkuat layanan pelanggan, terutama bagi mereka yang menghadapi masalah teknis, untuk mengurangi ketidakpuasan dan potensi churn.
+                    - `Flexible payment strategy:` Perkenalkan opsi pembayaran yang lebih fleksibel untuk meminimalkan keterlambatan pembayaran dan meningkatkan retensi pelanggan.
                 '''
 
                 cluster_2 = '''
-                    - cluster 2
-                    - cluster 2
-                    - cluster 2
+                    - cluster 2 merupakan kelompok customer yang memiliki daya beli yang cukup.
+                    - cluster 2 cenderung mengambil contract length monthly (secara bulanan) dari pada quarterly atau annually.
+                    - cluster 2 dapat dikatakan bahwa customer dengan cluster ini adalah karyawan yang menerima gaji secara bulanan/customer yang hanya membutuhkan membership untuk jangka waktu yang pendek.
                 '''
 
                 recommendation_2 = '''
-                    - rekomendasi 2
-                    - rekomendasi 2
-                    - rekomendasi 2
+                    - `Sales Strategy:` Alihkan contract length cluster ini dari monthly menjadi annually.
+                    - `Marketing Strategy:` Tingkatkan marketing terkait manfaat-manfaat mengambil membership annually. Bisa jadi cluster ini belum mengetahui manfaat yang didapatkannya apabila mengambil contract length secara tahunan.
                 '''
 
                 cluster_3 = '''
-                    - cluster 3
-                    - cluster 3
-                    - cluster 3
+                    - cluster 3 merupakan kelompok customer yang memiliki daya beli lebih tinggi daripada cluster 2 tetapi tidak lebih besar dari cluster 0 dan 1.
+                    - cluster 3 cenderung mengambil contract length monthly (secara bulanan) dari pada quarterly atau annually.
+                    - cluster 3 dapat dikatakan bahwa customer dengan cluster ini adalah karyawan yang menerima gaji secara bulanan/customer yang hanya membutuhkan membership untuk jangka waktu yang pendek.
                 '''
 
                 recommendation_3 = '''
-                    - rekomendasi 3
-                    - rekomendasi 3
-                    - rekomendasi 3
+                    - `Sales Strategy:` Alihkan contract length cluster ini dari monthly menjadi annually.
+                    - `Marketing Strategy:` Tingkatkan marketing terkait manfaat-manfaat mengambil membership annually. Bisa jadi cluster ini belum mengetahui manfaat yang didapatkannya apabila mengambil contract length secara tahunan.
                 '''
+                
+                # vertical line slit
+                # st.markdown(
+                #     """
+                #     <style>
+                #     div[data-testid="column"]:nth-of-type(1) > div {
+                #         border-right: 2px solid grey;
+                #     }
+                #     </style>
+                #     """,
+                #     unsafe_allow_html=True
+                # )
 
+                st.write("Customer Churn Description:")
+
+                # res_churn.write("Customer Churn Description:")
+                # res_non_churn.write("Customer Non Churn Description:")
+                
+                # with res_churn:
                 if c_0 != "":
-                    st.write(f"Cluster 0: {len(df_cluster_0)} customer(s)")
+                    st.write(f"Cluster 0: `{len(df_cluster_0)}` customer(s)")
                     st.write(cluster_0)
                     st.write("Recommendation:")
                     st.write(recommendation_0)
                     st.markdown('---')
                 
                 if c_1 != "":
-                    st.write(f"Cluster 1: {len(df_cluster_1)} customer(s)")
+                    st.write(f"Cluster 1: `{len(df_cluster_1)}` customer(s)")
                     st.write(cluster_1)
                     st.write("Recommendation:")
                     st.write(recommendation_1)
                     st.markdown('---')
                 
                 if c_2 != "":
-                    st.write(f"Cluster 2: {len(df_cluster_2)} customer(s)")
+                    st.write(f"Cluster 2: `{len(df_cluster_2)}` customer(s)")
                     st.write(cluster_2)
                     st.write("Recommendation:")
                     st.write(recommendation_2)
                     st.markdown('---')
 
                 if c_3 != "":
-                    st.write(f"Cluster 3: {len(df_cluster_3)} customer(s)")
+                    st.write(f"Cluster 3: `{len(df_cluster_3)}` customer(s)")
                     st.write(cluster_3)
                     st.write("Recommendation:")
                     st.write(recommendation_3)
                     st.markdown('---')
 
-                with open("result.xlsx", "rb") as file:
-                    st.download_button(
-                        label="Download Prediction Result",
+                
+            
+            # predict non churn cluster
+            if total_customer_non_churn == 0:
+                st.write("No Customer predicted as `Loyal Customer`.")
+            else:
+                non_churn_cluster_pred = model_cluster.predict(df_non_churn)
+                df_non_churn["cluster"] = non_churn_cluster_pred
+
+                df_non_churn = df_non_churn.sort_values(by=["cluster"], ascending=True)
+
+                # save to excel
+                df_non_churn.to_excel("result_non_churn.xlsx", index=False)
+
+                # df cluster
+                df_non_churn_cluster_0 = df_non_churn[df_non_churn["cluster"] == 0]
+                df_non_churn_cluster_1 = df_non_churn[df_non_churn["cluster"] == 1]
+                df_non_churn_cluster_2 = df_non_churn[df_non_churn["cluster"] == 2]
+                df_non_churn_cluster_3 = df_non_churn[df_non_churn["cluster"] == 3]
+
+                # result interface
+                st.subheader("Result of `Loyal Customer`:")
+                st.write(f"`{total_customer_non_churn} customers` from {total_customer} are predicted as `Loyal Customer`.")
+                st.markdown('---')
+
+                c_0 = ""
+                c_1 = ""
+                c_2 = ""
+                c_3 = ""
+
+                for c0 in df_non_churn_cluster_0["churn"]: c_0 += str(c0) + ", "
+                for c1 in df_non_churn_cluster_1["churn"]: c_1 += str(c1) + ", "
+                for c2 in df_non_churn_cluster_2["churn"]: c_2 += str(c2) + ", "
+                for c3 in df_non_churn_cluster_3["churn"]: c_3 += str(c3) + ", "
+
+                cluster_0 = '''
+                    - cluster 0 non churn
+                    - cluster 0 non churn
+                    - cluster 0 non churn
+                '''
+
+                recommendation_0 = '''
+                    - `Upsell Opportunities:` Promote upgrades to premium packages or additional services that offer more benefits.
+                    - `Loyalty Programs:` Implement loyalty programs that offer rewards or additional benefits for long-term customers.
+                    - `Early Access and Exclusivity:` Provide early access to promotions or new products to reward loyalty and maintain customer engagement.
+                '''
+
+                cluster_1 = '''
+                    - cluster 1 non churn
+                    - cluster 1 non churn
+                    - cluster 1 non churn
+                '''
+
+                recommendation_1 = '''
+                    - `Reward Programs:` Reward their loyalty with reward programs or service upgrades at no additional cost.
+                    - `Exclusive Events and Content:` Host exclusive events or content only for loyal customers to enhance exclusivity and satisfaction.
+                    - `Feedback Loop:` Regularly gather feedback to continuously improve service quality and meet the needs of premium customers.
+                '''
+
+                cluster_2 = '''
+                    - cluster 2 non churn
+                    - cluster 2 non churn
+                    - cluster 2 non churn
+                '''
+
+                recommendation_2 = '''
+                    - `Incentivize Annual Commitments:` Provide incentives for customers to extend their subscriptions to annual packages to improve revenue stability.
+                    - `Product Bundling:` Offer attractive product or service bundles to increase their total spend
+                    - `Enhanced Customer Service:` Provide premium customer service or dedicated support to encourage satisfaction and loyalty.
+                '''
+
+                cluster_3 = '''
+                    - cluster 3 non churn
+                    - cluster 3 non churn
+                    - cluster 3 non churn
+                '''
+
+                recommendation_3 = '''
+                    - `Referral Programs:` Encourage customers to refer friends and family by offering incentives for each successful referral.
+                    - `Tailored Offers:` Create personalized offers based on purchase history to increase their total spend.
+                    - `Long-Term Commitments:` Provide incentives for extending annual contracts or other long-term packages to retain customers.
+                '''
+                
+                # split vertical line
+                # st.markdown(
+                #     """
+                #     <style>
+                #     div[data-testid="column"]:nth-of-type(1) > div {
+                #         border-right: 2px solid grey;
+                #     }
+                #     </style>
+                #     """,
+                #     unsafe_allow_html=True
+                # )
+
+                st.write("Customer Non Churn Description:")
+                
+                if c_0 != "":
+                    st.write(f"Cluster 0: `{len(df_non_churn_cluster_0)}` customer(s)")
+                    st.write(cluster_0)
+                    st.write("Recommendation:")
+                    st.write(recommendation_0)
+                    st.markdown('---')
+                
+                if c_1 != "":
+                    st.write(f"Cluster 1: `{len(df_non_churn_cluster_1)}` customer(s)")
+                    st.write(cluster_1)
+                    st.write("Recommendation:")
+                    st.write(recommendation_1)
+                    st.markdown('---')
+                
+                if c_2 != "":
+                    st.write(f"Cluster 2: `{len(df_non_churn_cluster_2)}` customer(s)")
+                    st.write(cluster_2)
+                    st.write("Recommendation:")
+                    st.write(recommendation_2)
+                    st.markdown('---')
+
+                if c_3 != "":
+                    st.write(f"Cluster 3: `{len(df_non_churn_cluster_3)}` customer(s)")
+                    st.write(cluster_3)
+                    st.write("Recommendation:")
+                    st.write(recommendation_3)
+                    st.markdown('---')
+
+                col_1, col_2 = st.columns([1, 1])
+
+                with open("result_churn.xlsx", "rb") as file:
+                    col_1.download_button(
+                        label="Download Churn Prediction Result",
                         data=file,
-                        file_name="result.xlsx",
+                        file_name="result_churn.xlsx",
+                        mime="application/vnd.ms-excel"
+                    )
+                
+                with open("result_non_churn.xlsx", "rb") as file:
+                    col_2.download_button(
+                        label="Download Non Churn Prediction Result",
+                        data=file,
+                        file_name="result_non_churn.xlsx",
                         mime="application/vnd.ms-excel"
                     )
 
@@ -188,6 +342,9 @@ def run():
             else:    
                 df = pd.read_excel(uploaded_file)
             
+            # debug
+            # st.write(df)
+
             predict_data(df)
     else:
     # form input
@@ -218,7 +375,10 @@ def run():
 
         if st.button("Predict"):
             data_inf = pd.DataFrame([data_inf])
-            st.write(data_inf.T)
+            
+            # debug
+            # st.write(data_inf.T)
+            
             predict_data(data_inf)
 
 if __name__ == "__main__":
