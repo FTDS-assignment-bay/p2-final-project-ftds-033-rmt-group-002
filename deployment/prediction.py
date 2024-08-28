@@ -39,7 +39,7 @@ def run():
 
             # predict churn cluster
             if total_customer_churn == 0:
-                st.write("No Customer predicted as Churn.")
+                st.write("No Customer predicted as `Churn`.")
             else:
                 cluster_pred = model_cluster.predict(df_churn)
                 df_churn["cluster"] = cluster_pred
@@ -171,7 +171,7 @@ def run():
             
             # predict non churn cluster
             if total_customer_non_churn == 0:
-                st.write("No Customer predicted as Non Churn.")
+                st.write("No Customer predicted as `Loyal Customer`.")
             else:
                 non_churn_cluster_pred = model_cluster.predict(df_non_churn)
                 df_non_churn["cluster"] = non_churn_cluster_pred

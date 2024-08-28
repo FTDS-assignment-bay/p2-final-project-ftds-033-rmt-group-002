@@ -5,7 +5,7 @@ import eda
 import prediction
 
 st.header("Locana")
-st.write("Prediction Insight")
+st.write("Customer Insight")
 st.markdown('---')
 
 with st.sidebar:
