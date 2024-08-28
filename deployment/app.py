@@ -4,7 +4,7 @@ import about
 import eda
 import prediction
 
-st.header("Customer Churn Insight")
+st.header("Locana")
 st.write("Predict Customer Churn")
 st.markdown('---')
 
