@@ -71,48 +71,50 @@ def run():
                 for c3 in df_cluster_3["churn"]: c_3 += str(c3) + ", "
 
                 cluster_0 = '''
-                    - Merupakan kelompok customer yang memiliki daya beli yang tinggi dan efisien.
-                    - Cenderung mengambil contract length annually (tahunan) atau quarterly (per 3 bulan) dibanding mengambil monthly (bulanan).
-                    - Bisa dikatakan kelompok customer yang sering belanja dan mengutamakan hemat.
+                    - Monthly Spender merupakan kelompok customer yang memiliki daya beli yang tinggi dan rutin tiap bulannya.
+                    - Pola belanja customer pada kelompok Monthly Spender umumnya adalah untuk belanja bulanan.   
+                    - Apabila Monthly Spender mengalami churn, bisa jadi disebabkan karena adanya banyak keluhan pada customer support, minat belanja berkurang, atau belum memilih membership annual.
                 '''
 
                 recommendation_0 = '''
-                    - `Discount Strategy:` Berikan diskon atau layanan eksklusif yang disesuaikan untuk mendorong pelanggan memperpanjang langganan mereka dan meningkatkan loyalitas.
                     - `Enhance customer support:` Perkuat layanan pelanggan, terutama bagi mereka yang menghadapi masalah teknis, untuk mengurangi ketidakpuasan dan potensi churn.
-                    - `Flexible payment strategy:` Perkenalkan opsi pembayaran yang lebih fleksibel untuk meminimalkan keterlambatan pembayaran dan meningkatkan retensi pelanggan.
+                    - `Sales Strategy:` Fokuskan customer pada kelompok ini beralih menjadi membership annual.
+                    - `Marketing Strategy:` Tingkatkan marketing terkait manfaat-manfaat mengambil membership annually. Bisa jadi cluster ini belum mengetahui manfaat yang didapatkannya apabila mengambil contract length secara tahunan.
                 '''
 
                 cluster_1 = '''
-                    - Merupakan kelompok customer yang memiliki daya beli yang lebih tinggi dan juga efisien.
-                    - Paling banyak mengambil contract length annually (tahunan) atau quarterly (per 3 bulan) dibanding mengambil monthly (bulanan).
-                    - Bisa dikatakan kelompok customer yang sering belanja.
+                    - Frequent Spender merupakan kelompok customer yang memiliki daya beli yang tinggi dan rutin tiap minggunya.
+                    - Pola belanja customer pada kelompok Frequent Spender umumnya adalah untuk belanja mingguan.   
+                    - Apabila Frequent Spender mengalami churn, bisa jadi disebabkan karena adanya banyak keluhan pada customer support, minat belanja berkurang, atau belum memilih membership annual.
                 '''
 
                 recommendation_1 = '''
-                    - `Discount Strategy:` Berikan diskon atau layanan eksklusif yang disesuaikan untuk mendorong pelanggan memperpanjang langganan mereka dan meningkatkan loyalitas.
                     - `Enhance customer support:` Perkuat layanan pelanggan, terutama bagi mereka yang menghadapi masalah teknis, untuk mengurangi ketidakpuasan dan potensi churn.
-                    - `Flexible payment strategy:` Perkenalkan opsi pembayaran yang lebih fleksibel untuk meminimalkan keterlambatan pembayaran dan meningkatkan retensi pelanggan.
+                    - `Sales Strategy:` Fokuskan customer pada kelompok ini beralih menjadi membership annual.
+                    - `Marketing Strategy:` Tingkatkan marketing terkait manfaat-manfaat mengambil membership annually. Bisa jadi cluster ini belum mengetahui manfaat yang didapatkannya apabila mengambil contract length secara tahunan.
                 '''
 
                 cluster_2 = '''
-                    - Merupakan kelompok customer yang memiliki daya beli yang cukup.
-                    - Cenderung mengambil contract length monthly (secara bulanan) dari pada quarterly atau annually.
-                    - Dapat dikatakan bahwa customer dengan cluster ini adalah karyawan yang menerima gaji secara bulanan/customer yang hanya membutuhkan membership untuk jangka waktu yang pendek.
+                    - Young Risk merupakan kelompok customer dengan rentang usia 18-49 tahun dan memiliki daya beli yang cukup.
+                    - Pola belanja customer pada kelompok Young Risk umumnya adalah untuk belanja tiap 2 minggu.   
+                    - Apabila Young Risk mengalami churn, bisa jadi disebabkan karena adanya banyak keluhan pada customer support, minat belanja berkurang, pembayaran yang terlambat >15 hari atau belum memilih membership annual.
                 '''
 
                 recommendation_2 = '''
-                    - `Sales Strategy:` Alihkan contract length cluster ini dari monthly menjadi annually.
+                    - `Enhance customer support:` Perkuat layanan pelanggan, terutama bagi mereka yang menghadapi masalah teknis, untuk mengurangi ketidakpuasan dan potensi churn.
+                    - `Sales Strategy:` Fokuskan customer pada kelompok ini beralih menjadi membership annual.
                     - `Marketing Strategy:` Tingkatkan marketing terkait manfaat-manfaat mengambil membership annually. Bisa jadi cluster ini belum mengetahui manfaat yang didapatkannya apabila mengambil contract length secara tahunan.
                 '''
 
                 cluster_3 = '''
-                    - Merupakan kelompok customer yang memiliki daya beli lebih tinggi daripada Young Risk tetapi tidak lebih besar dari Monthly Spender dan Frequent Spender.
-                    - Cenderung mengambil contract length monthly (secara bulanan) dari pada quarterly atau annually.
-                    - Dapat dikatakan bahwa customer dengan cluster ini adalah karyawan yang menerima gaji secara bulanan/customer yang hanya membutuhkan membership untuk jangka waktu yang pendek.
+                    - Older Risk merupakan kelompok customer dengan rentang usia 49-65 tahun dan memiliki daya beli yang cukup.
+                    - Pola belanja customer pada kelompok Older Risk umumnya adalah untuk belanja tiap 2 minggu.   
+                    - Apabila Older Risk mengalami churn, bisa jadi disebabkan karena adanya banyak keluhan pada customer support, minat belanja berkurang, pembayaran yang terlambat >15 hari atau belum memilih membership annual.
                 '''
 
                 recommendation_3 = '''
-                    - `Sales Strategy:` Alihkan contract length cluster ini dari monthly menjadi annually.
+                    - `Enhance customer support:` Perkuat layanan pelanggan, terutama bagi mereka yang menghadapi masalah teknis, untuk mengurangi ketidakpuasan dan potensi churn.
+                    - `Sales Strategy:` Fokuskan customer pada kelompok ini beralih menjadi membership annual.
                     - `Marketing Strategy:` Tingkatkan marketing terkait manfaat-manfaat mengambil membership annually. Bisa jadi cluster ini belum mengetahui manfaat yang didapatkannya apabila mengambil contract length secara tahunan.
                 '''
 
@@ -183,21 +185,21 @@ def run():
                 for c3 in df_non_churn_cluster_3["churn"]: c_3 += str(c3) + ", "
 
                 cluster_0 = '''
-                    - Merupakan kelompok customer yang memiliki daya beli yang tinggi dan efisien.
-                    - Cenderung mengambil contract length annually (tahunan) atau quarterly (per 3 bulan) dibanding mengambil monthly (bulanan).
-                    - Bisa dikatakan kelompok customer yang sering belanja dan mengutamakan hemat.
+                    - Monthly Spender merupakan kelompok customer yang memiliki daya beli yang tinggi dan rutin tiap bulannya.
+                    - Pola belanja customer pada kelompok Monthly Spender umumnya adalah untuk belanja bulanan.   
+                    - Monthly Spender yang loyal merupakan customer yang rutin berbelanja, hemat dan efisien.
                 '''
 
                 recommendation_0 = '''
-                    - `Discount Strategy:` Berikan diskon atau layanan eksklusif yang disesuaikan untuk mendorong pelanggan memperpanjang langganan mereka dan meningkatkan loyalitas.
+                    - `Discount Strategy:` Promosikan upgrade ke paket premium atau tambahan layanan yang menawarkan lebih banyak manfaat.
                     - `Enhance customer support:` Perkuat layanan pelanggan, terutama bagi mereka yang menghadapi masalah teknis, untuk mengurangi ketidakpuasan dan potensi churn.
                     - `Flexible payment strategy:` Perkenalkan opsi pembayaran yang lebih fleksibel untuk meminimalkan keterlambatan pembayaran dan meningkatkan retensi pelanggan.
                 '''
 
                 cluster_1 = '''
-                    - Merupakan kelompok customer yang memiliki daya beli yang lebih tinggi dan juga efisien.
-                    - Paling banyak mengambil contract length annually (tahunan) atau quarterly (per 3 bulan) dibanding mengambil monthly (bulanan).
-                    - Bisa dikatakan kelompok customer yang sering belanja.
+                    - Frequent Spender merupakan kelompok customer yang memiliki daya beli yang tinggi dan rutin tiap minggunya.
+                    - Pola belanja customer pada kelompok Frequent Spender umumnya adalah untuk belanja mingguan.   
+                    - Frequent Spender yang loyal merupakan customer yang sering berbelanja dan efisien.
                 '''
 
                 recommendation_1 = '''
@@ -207,9 +209,9 @@ def run():
                 '''
 
                 cluster_2 = '''
-                    - Merupakan kelompok customer yang memiliki daya beli yang cukup.
-                    - Cenderung mengambil contract length monthly (secara bulanan) dari pada quarterly atau annually.
-                    - Dapat dikatakan bahwa customer dengan cluster ini adalah karyawan yang menerima gaji secara bulanan/customer yang hanya membutuhkan membership untuk jangka waktu yang pendek.
+                    - Young Risk merupakan kelompok customer dengan rentang usia 18-49 tahun dan memiliki daya beli yang cukup.
+                    - Pola belanja customer pada kelompok Young Risk umumnya adalah untuk belanja tiap 2 minggu.   
+                    - Young Risk yang loyal merupakan customer muda remaja hingga dewasa yang rutin berbelanja dan sedikit keluhan.
                 '''
 
                 recommendation_2 = '''
@@ -218,9 +220,9 @@ def run():
                 '''
 
                 cluster_3 = '''
-                    - Merupakan kelompok customer yang memiliki daya beli lebih tinggi daripada Young Risk tetapi tidak lebih besar dari Monthly Spender dan Frequent Spender.
-                    - Cenderung mengambil contract length monthly (secara bulanan) dari pada quarterly atau annually.
-                    - Dapat dikatakan bahwa customer dengan cluster ini adalah karyawan yang menerima gaji secara bulanan/customer yang hanya membutuhkan membership untuk jangka waktu yang pendek.
+                    - Older Risk merupakan kelompok customer dengan rentang usia 49-65 tahun dan memiliki daya beli yang cukup.
+                    - Pola belanja customer pada kelompok Older Risk umumnya adalah untuk belanja tiap 2 minggu.
+                    - Older Risk yang loyal merupakan customer dewasa hingga lansia yang rutin berbelanja dan sedikit keluhan.
                 '''
 
                 recommendation_3 = '''
