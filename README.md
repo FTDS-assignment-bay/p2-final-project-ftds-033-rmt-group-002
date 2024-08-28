@@ -2,6 +2,7 @@
 <img src="deployment/Locana.png" alt="Locana" width="200"/>
 
 # Locana
+## Melihat Churn, Mengunci Kesetiaan
 Proyek kami fokus pada memprediksi churn pelanggan untuk membantu bisnis mempertahankan pelanggan yang paling berharga.\
 **__Locana__** dibuat menggunakan machine learning untuk memprediksi churn terhadap membership berbayar di e-commerce serta  mengidentifikasi segmentasi membership dan rekomendasi terhadap segmentasi tersebut.
 
