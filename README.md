@@ -1,15 +1,60 @@
-# E-Commerce Customer Churn Prediction and Classification
+![Header Image](deployment/Locana.png)
 
-## Background and Objective
-Background:
+# Locana
+Proyek kami fokus pada memprediksi churn pelanggan untuk membantu bisnis mempertahankan pelanggan yang paling berharga.\
+**__Locana__** dibuat menggunakan machine learning untuk memprediksi churn terhadap membership berbayar di e-commerce serta  mengidentifikasi segmentasi membership dan rekomendasi terhadap segmentasi tersebut.
 
-Berdasarkan publikasi statistik dari Kementerian Perdagangan mengenai [PERDAGANGAN DIGITAL (E-COMMERCE) INDONESIA PERIODE 2023](https://satudata.kemendag.go.id/ringkasan/produk/perdagangan-digital-e-commerce-indonesia-periode-2023), e-commerce di Indonesia telah mengalami pertumbuhan yang signifikan dari tahun 2019 hingga 2023, menjadikannya salah satu pasar e-commerce terbesar di Asia Tenggara. Peningkatan akses internet, adopsi smartphone, dan perubahan perilaku konsumen telah menjadi pendorong utama dalam perkembangan ini. Namun, di tengah pesatnya pertumbuhan pasar e-commerce di Indonesia, perusahaan-perusahaan di industri ini menghadapi tantangan yang cukup besar, salah satunya adalah churn pelanggan.
+---
 
-Pelanggan merupakan aset penting bagi perusahaan, dan hilangnya pelanggan (customer churn) dapat mengancam keberlanjutan bisnis, terutama dalam industri e-commerce yang sangat kompetitif. Mengingat tingginya biaya akuisisi pelanggan baru serta dampak negatif churn terhadap pendapatan dan reputasi, menjadi krusial bagi perusahaan untuk mengembangkan model prediksi churn yang efektif.
+## Latar Belakang
+Berdasarkan publikasi statistik dari Kementerian Perdagangan tentang PERDAGANGAN DIGITAL (E-COMMERCE) 
+INDONESIA PERIODE 2023, menyatakan bahwa e-commerce di Indonesia telah mengalami pertumbuhan yang 
+signifikan dari 2019 hingga 2023, e-commerce menghadapi tantangan besar, salah satunya adalah `churn pelanggan`
 
-Objective:
+---
 
-Tujuan dari proyek ini adalah untuk mengembangkan model prediksi churn dan model clustering yang dapat memprediksi kemungkinan churn serta memberikan rekomendasi strategis bagi toko online. Dengan demikian, perusahaan e-commerce dapat lebih efektif dalam mempertahankan pelanggan mereka dan mengurangi risiko kehilangan pangsa pasar yang berharga.
+## Objektif
+Membuat model prediksi dan model clustering yang bertujuan untuk memprediksi churn dan memberikan rekomendasi untuk toko online guna membantu perusahaan _e-commerce_ dalam mempertahankan pelanggan dan mengurangi risiko kehilangan pangsa pasar.
+
+---
+
+## Tools
+- Python
+- Apache Airflow
+- PostgreSQL
+- Visual Studio Code
+- Pandas
+- Numpy
+- Matplotlib
+- Seaborn
+- Tableau
+- Scikit-learn
+- Tensorflow
+- Keras
+- Streamlit
+
+---
+
+## Eksplorasi Data Analisis
+
+---
+
+## Hasil
+
+---
+
+## Kesimpulan
+
+---
+
+## Tim
+- [**Astrila Ikhlasia Eprina**](https://www.linkedin.com/in/astrilalia/) (Data Analyst)
+- [**Muhammad Azhar Khaira**](https://www.linkedin.com/in/azharkhaira/) (Data Scientist)
+- [**Yuzal Qushoyyi Wahyudi**](https://www.linkedin.com/in/yuzalqushoyyiwahyudi/) (Data Engineer)
+---
+
+## Referensi
+
 
 - *Kotler, P., & Keller, K. L. (2016). Marketing Management (15th ed.). Pearson.*
 - *Nguyen, B., & Mutum, D. S. (2012). A review of customer relationship management: Successes, advances, pitfalls and futures. Business Process Management Journal, 18(3), 400-419.*
