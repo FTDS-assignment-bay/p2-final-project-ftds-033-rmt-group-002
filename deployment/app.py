@@ -8,7 +8,8 @@ from PIL import Image
 col1, col2, col3, col4, col5= st.columns(5)
 
 imglogo = Image.open("Locana.png")
-img = imglogo.resize(size=(100,80))
+img = imglogo.resize(size=(80,60))
+col2.write("")
 col2.image(img)
 col1.header("Locana")
 st.write("##### Melihat Churn, Mengunci Kesetiaan")

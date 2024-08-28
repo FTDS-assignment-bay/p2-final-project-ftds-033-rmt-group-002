@@ -13,7 +13,7 @@ def run():
                 """, unsafe_allow_html=True)
     st.markdown("---")
 
-    with st.expander("Background Locana"):
+    with st.expander("Latar Belakang Locana"):
         st.write("""
         Berdasarkan publikasi statistik dari Kementerian Perdagangan tentang PERDAGANGAN DIGITAL (E-COMMERCE) 
         INDONESIA PERIODE 2023, menyatakan bahwa e-commerce di Indonesia telah mengalami pertumbuhan yang 
