@@ -5,10 +5,13 @@ import eda
 import prediction
 
 st.header("Locana")
-st.write("Predict Customer Churn")
+st.write("Prediction Insight")
 st.markdown('---')
 
 with st.sidebar:
+    st.subheader("Locana")
+    # st.write("Predict Tomorrow, Act Today")
+
     st.subheader("Select Page")
     selected = option_menu(None, ["About", "Exploratory Data Analysis", "Predict"], 
         icons=['house', 'file-earmark-bar-graph', 'search'], 
@@ -20,11 +23,12 @@ with st.sidebar:
         }
     )
 
-    st.write("Team:")
-    st.write("Astrila Ikhlasia Eprina")
-    st.write("Muhammad Azhar Khaira")
-    st.write("Yuzal Qushoyyi Wahyudi")
+    # st.write("Team:")
+    # st.write("Astrila Ikhlasia Eprina")
+    # st.write("Muhammad Azhar Khaira")
+    # st.write("Yuzal Qushoyyi Wahyudi")
 
+    
 if selected == "About":
     about.run()
 elif selected == "Exploratory Data Analysis":

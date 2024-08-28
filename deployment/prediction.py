@@ -56,7 +56,7 @@ def run():
                 df_cluster_3 = df_churn[df_churn["cluster"] == 3]
 
                 # result interface
-                st.subheader("Result of Churn Customer:")
+                st.subheader("Result of `Churn` Customer:")
                 st.write(f"`{total_customer_churn} customers` from {total_customer} are predicted as `Churn`.")
                 st.markdown('---')
                 
@@ -80,9 +80,9 @@ def run():
                 '''
 
                 recommendation_0 = '''
-                    - rekomendasi 0
-                    - rekomendasi 0
-                    - rekomendasi 0
+                    - `Personalized Retention Offers:` Offer discounts or additional exclusive services to extend subscriptions and increase loyalty.
+                    - `Enhanced Customer Support:` Improve customer response and support, especially for those facing technical issues to reduce dissatisfaction.
+                    - `Flexible Payment Plans:` Provide more flexible payment plans to reduce the risk of late payments and retain customers.
                 '''
 
                 cluster_1 = '''
@@ -92,9 +92,9 @@ def run():
                 '''
 
                 recommendation_1 = '''
-                    - rekomendasi 1
-                    - rekomendasi 1
-                    - rekomendasi 1
+                    - `Customer Re-engagement Campaigns:` Launch campaigns targeting customers with low last interaction to remind them of the benefits of membership.
+                    - `Reduce Payment Friction:` Simplify the payment process and provide automatic reminders to avoid late payments.
+                    - `Proactive Issue Resolution:` Address technical or service issues before customers decide to cancel their subscriptions.
                 '''
 
                 cluster_2 = '''
@@ -104,9 +104,9 @@ def run():
                 '''
 
                 recommendation_2 = '''
-                    - rekomendasi 2
-                    - rekomendasi 2
-                    - rekomendasi 2
+                    - `Financial Assistance Programs:` Offer financial assistance or installment plans to help customers pay for subscriptions and reduce churn.
+                    - `Issue Resolution Initiatives:` Focus on resolving common issues faced by customers in this cluster, such as slow support or technical problems.
+                    - `Retention Offers:` Launch special offers, such as discounts or additional free subscription time, to encourage them to stay with the service.
                 '''
 
                 cluster_3 = '''
@@ -116,9 +116,9 @@ def run():
                 '''
 
                 recommendation_3 = '''
-                    - rekomendasi 3
-                    - rekomendasi 3
-                    - rekomendasi 3
+                    - `Personalized Support:` Provide more personalized and attentive support for older customers who may need more assistance.
+                    - `Flexible Contract Options:` Offer more flexible contract options to better match customers' financial needs and reduce the risk of churn.
+                    - `Retention Campaigns:` Launch campaigns targeting customers with frequent late payments to encourage timely payments and reduce churn.
                 '''
                 
                 # vertical line slit
@@ -188,7 +188,7 @@ def run():
                 df_non_churn_cluster_3 = df_non_churn[df_non_churn["cluster"] == 3]
 
                 # result interface
-                st.subheader("Result of Loyal Customer:")
+                st.subheader("Result of `Loyal Customer`:")
                 st.write(f"`{total_customer_non_churn} customers` from {total_customer} are predicted as `Loyal Customer`.")
                 st.markdown('---')
 
@@ -209,9 +209,9 @@ def run():
                 '''
 
                 recommendation_0 = '''
-                    - rekomendasi 0 non churn
-                    - rekomendasi 0 non churn
-                    - rekomendasi 0 non churn
+                    - `Upsell Opportunities:` Promote upgrades to premium packages or additional services that offer more benefits.
+                    - `Loyalty Programs:` Implement loyalty programs that offer rewards or additional benefits for long-term customers.
+                    - `Early Access and Exclusivity:` Provide early access to promotions or new products to reward loyalty and maintain customer engagement.
                 '''
 
                 cluster_1 = '''
@@ -221,9 +221,9 @@ def run():
                 '''
 
                 recommendation_1 = '''
-                    - rekomendasi 1 non churn
-                    - rekomendasi 1 non churn
-                    - rekomendasi 1 non churn
+                    - `Reward Programs:` Reward their loyalty with reward programs or service upgrades at no additional cost.
+                    - `Exclusive Events and Content:` Host exclusive events or content only for loyal customers to enhance exclusivity and satisfaction.
+                    - `Feedback Loop:` Regularly gather feedback to continuously improve service quality and meet the needs of premium customers.
                 '''
 
                 cluster_2 = '''
@@ -233,9 +233,9 @@ def run():
                 '''
 
                 recommendation_2 = '''
-                    - rekomendasi 2 non churn
-                    - rekomendasi 2 non churn
-                    - rekomendasi 2 non churn
+                    - `Incentivize Annual Commitments:` Provide incentives for customers to extend their subscriptions to annual packages to improve revenue stability.
+                    - `Product Bundling:` Offer attractive product or service bundles to increase their total spend
+                    - `Enhanced Customer Service:` Provide premium customer service or dedicated support to encourage satisfaction and loyalty.
                 '''
 
                 cluster_3 = '''
@@ -245,21 +245,22 @@ def run():
                 '''
 
                 recommendation_3 = '''
-                    - rekomendasi 3 non churn
-                    - rekomendasi 3 non churn
-                    - rekomendasi 3 non churn
+                    - `Referral Programs:` Encourage customers to refer friends and family by offering incentives for each successful referral.
+                    - `Tailored Offers:` Create personalized offers based on purchase history to increase their total spend.
+                    - `Long-Term Commitments:` Provide incentives for extending annual contracts or other long-term packages to retain customers.
                 '''
                 
-                st.markdown(
-                    """
-                    <style>
-                    div[data-testid="column"]:nth-of-type(1) > div {
-                        border-right: 2px solid grey;
-                    }
-                    </style>
-                    """,
-                    unsafe_allow_html=True
-                )
+                # split vertical line
+                # st.markdown(
+                #     """
+                #     <style>
+                #     div[data-testid="column"]:nth-of-type(1) > div {
+                #         border-right: 2px solid grey;
+                #     }
+                #     </style>
+                #     """,
+                #     unsafe_allow_html=True
+                # )
 
                 st.write("Customer Non Churn Description:")
                 
