@@ -7,32 +7,26 @@ def resize_image(image_path, size=(315, 400)):
     return img
 
 def run():
-    st.header("🌟 Tentang Program")
+    st.subheader(":eye: Tentang Locana")
     st.write("Proyek kami fokus pada memprediksi churn pelanggan untuk membantu bisnis mempertahankan pelanggan yang paling berharga.")
-    st.markdown("""
-    **Customer Churn Insight** adalah proyek ilmu data yang bertujuan untuk memprediksi pelanggan yang akan berhenti menggunakan layanan dengan menggunakan teknik machine learning yang canggih. 
-
-    Tujuan utama dari proyek ini adalah:
-    - **Menganalisis** data pelanggan untuk mengidentifikasi pola churn.
-    - **Mengembangkan** model prediktif untuk memprediksi churn pelanggan.
-    - **Memberikan** wawasan yang dapat diambil tindakan untuk membantu mempertahankan pelanggan yang berharga.
-
-    Proyek ini adalah bagian dari tugas akhir Bootcamp Data Science kami dan menunjukkan keterampilan kami dalam analisis data, rekayasa fitur, pengembangan model, dan penerapan.
-    """)
+    st.markdown(""" **<u>Locana</u>** dibuat menggunakan machine learning untuk memprediksi churn terhadap membership berbayar di e-commerce serta  mengidentifikasi segmentasi membership dan rekomendasi terhadap segmentasi tersebut.
+                """, unsafe_allow_html=True)
     st.markdown("---")
 
-    with st.expander("Pelajari Lebih Lanjut Tentang Program"):
+    with st.expander("Background Locana"):
         st.write("""
-        Proyek ini mengeksplorasi berbagai algoritma machine learning, termasuk regresi logistik, decision trees, dan random forests, untuk membangun model yang kuat dalam memprediksi churn pelanggan.
-        Kami juga mengeksplorasi teknik rekayasa fitur dan melakukan tuning hyperparameter untuk mengoptimalkan kinerja model.
+        Berdasarkan publikasi statistik dari Kementerian Perdagangan tentang PERDAGANGAN DIGITAL (E-COMMERCE) 
+        INDONESIA PERIODE 2023, menyatakan bahwa e-commerce di Indonesia telah mengalami pertumbuhan yang 
+        signifikan dari 2019 hingga 2023, e-commerce menghadapi tantangan besar, salah satunya adalah `churn pelanggan`.
         """)
 
-    with st.expander("Latar Belakang Tim"):
+    with st.expander("Objektif Locana"):
         st.write("""
-        Tim kami terdiri dari profesional data yang berpengalaman dengan latar belakang yang beragam dalam analitik, machine learning, dan rekayasa data. Setiap anggota membawa keahlian unik ke dalam proyek, berkontribusi pada kesuksesannya.
+        Membuat model prediksi dan model clustering yang bertujuan untuk memprediksi churn dan memberikan rekomendasi untuk toko online guna membantu perusahaan _e-commerce_ dalam mempertahankan pelanggan dan mengurangi risiko kehilangan pangsa pasar.
         """)
+    st.markdown("---")
 
-    st.subheader("👥 Meet the Team")
+    st.subheader("👥 Tim")
     
     col1, col2, col3 = st.columns(3)
 
