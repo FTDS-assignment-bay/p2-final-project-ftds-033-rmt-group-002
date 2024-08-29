@@ -18,7 +18,7 @@ signifikan dari 2019 hingga 2023, e-commerce menghadapi tantangan besar, salah s
 ---
 
 ## Objektif
-Membuat model prediksi dan model clustering yang bertujuan untuk memprediksi churn dan memberikan rekomendasi untuk toko online guna membantu perusahaan _e-commerce_ dalam mempertahankan pelanggan dan mengurangi risiko kehilangan pangsa pasar.
+Membuat model prediksi dan model clustering yang bertujuan untuk memprediksi churn dan memberikan rekomendasi untuk membantu perusahaan _e-commerce_ dalam mempertahankan pelanggan dan mengurangi risiko kehilangan pangsa pasar.
 
 ---
 
