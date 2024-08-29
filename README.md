@@ -1,8 +1,6 @@
 <!-- ![Header Image](deployment/Locana.png) -->
-<div style="align: center;">
-    <img src="deployment/Locana.png" alt="Locana" width="200"/>
-    <h2>Locana</h2>
-</div>
+<img src="deployment/Locana.png" alt="Locana" width="200"/>
+<h2 align="center">Locana</h2>
 
 ## Melihat Churn, Mengunci Kesetiaan
 Proyek kami fokus pada memprediksi churn pelanggan untuk membantu bisnis mempertahankan pelanggan yang paling berharga.\
