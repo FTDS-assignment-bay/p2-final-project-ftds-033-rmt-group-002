@@ -48,7 +48,9 @@ Membuat model prediksi dan model clustering yang bertujuan untuk memprediksi chu
 ---
 
 ## Hasil
-![Classification Report](images/cr.png)
+<div align="center">
+  <img src="images/cr.png" alt="Classification Report" width="75%"/>
+</div>
 ![Confusion Matrix](images/cm.png)
 ![2D and 3D Visualization](images/2d-3d.png)
 
