@@ -58,7 +58,7 @@ Membuat model prediksi dan model clustering yang bertujuan untuk memprediksi chu
 ---
 
 ## Kesimpulan
-- Model prediksi yang telah dibangun menggunakan algoritma Decision Tree berhasil mencapai akurasi yang tinggi yaitu 99%. Hal ini menunjukan bahwa model efektif dalam memprediksi apakah customer akan churn atau tetap loyal.
+- Model prediksi yang telah dibangun menggunakan algoritma Decision Tree berhasil mencapai akurasi yang tinggi yaitu 99% dengan proses train yang lebih cepat dibandingkan algoritma yang lain. Hal ini menunjukan bahwa model efektif dalam memprediksi apakah customer akan churn atau tetap loyal.
 
 - Model clustering berhasil membagi customer menjadi 4 kategori dengan karakteristik yang cukup jelas.
 - **Monthly Spender**: Customer yang memiliki daya beli yang tinggi dan rutin tiap bulannya. Pola belanja customer pada kelompok Monthly Spender umumnya adalah untuk belanja bulanan. Monthly Spender yang loyal merupakan customer yang rutin berbelanja, hemat dan efisien.
