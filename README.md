@@ -40,13 +40,22 @@ Membuat model prediksi dan model clustering yang bertujuan untuk memprediksi chu
 
 ## Eksplorasi Data Analisis
 
+![EDA 1](images/eda-1.png)
+![EDA 2](images/eda-2.png)
+![EDA 3](images/eda-3.png)
+
 ---
 
 ## Hasil
+![Confusion Matrix](images/cm.png)
+![2D and 3D Visualization](images/2d-3d.png)
 
 ---
 
 ## Kesimpulan
+- Model prediksi yang telah dibangun menggunakan algoritma Decision Tree berhasil mencapai akurasi yang tinggi yaitu 99%. Hal ini menunjukan bahwa model efektif dalam memprediksi apakah customer akan churn atau tetap loyal.
+
+- Model clustering berhasil membagi customer menjadi 4 kategori dengan karakteristik yang cukup jelas.
 
 ---
 
@@ -56,8 +65,11 @@ Membuat model prediksi dan model clustering yang bertujuan untuk memprediksi chu
 - [**Yuzal Qushoyyi Wahyudi**](https://www.linkedin.com/in/yuzalqushoyyiwahyudi/) (Data Engineer)
 ---
 
-## Referensi
+[Deployment](https://huggingface.co/spaces/yuzalle/Locana)
 
+---
+
+## Referensi
 
 - *Kotler, P., & Keller, K. L. (2016). Marketing Management (15th ed.). Pearson.*
 - *Nguyen, B., & Mutum, D. S. (2012). A review of customer relationship management: Successes, advances, pitfalls and futures. Business Process Management Journal, 18(3), 400-419.*
