@@ -49,7 +49,7 @@ Membuat model prediksi dan model clustering yang bertujuan untuk memprediksi chu
 
 ## Hasil
 <div align="center">
-  <img src="images/cr.png" alt="Classification Report" width="75%"/>
+  <img src="images/cr.png" alt="Classification Report" width="70%"/>
 </div>
 
 ![Confusion Matrix](images/cm.png)
