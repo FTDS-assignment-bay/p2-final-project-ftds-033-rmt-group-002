@@ -2,7 +2,7 @@
 <div align="center">
   <img src="deployment/Locana.png" alt="Locana" width="200"/>
 </div>
-<p align="center" style="font-size: 30px;">Locana</p>
+<h1 align="center" style="font-size: 30px;">Locana</h1>
 <p align="center" style="font-size: 20px;">Melihat Churn, Mengunci Kesetiaan</p>
 
 Proyek kami fokus pada memprediksi churn pelanggan untuk membantu bisnis mempertahankan pelanggan yang paling berharga.\
