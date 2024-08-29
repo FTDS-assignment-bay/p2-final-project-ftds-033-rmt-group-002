@@ -2,8 +2,8 @@
 <div align="center">
   <img src="deployment/Locana.png" alt="Locana" width="200"/>
 </div>
-<h1 align="center" style="font-size: 30px;">Locana</h1>
-<p align="center" style="font-size: 20px;">Melihat Churn, Mengunci Kesetiaan</p>
+<h1 align="center">Locana</h1>
+<h3 align="center">Melihat Churn, Mengunci Kesetiaan</h3>
 
 Proyek kami fokus pada memprediksi churn pelanggan untuk membantu bisnis mempertahankan pelanggan yang paling berharga.\
 **Locana** dibuat menggunakan machine learning untuk memprediksi churn terhadap membership berbayar di e-commerce serta  mengidentifikasi segmentasi membership dan rekomendasi terhadap segmentasi tersebut.
