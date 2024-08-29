@@ -1,5 +1,5 @@
 <!-- ![Header Image](deployment/Locana.png) -->
-<img src="deployment/Locana.png" alt="Locana" width="200"/>
+<img src="deployment/Locana.png" alt="Locana" align="center" width="200"/>
 <h2 align="center">Locana</h2>
 
 ## Melihat Churn, Mengunci Kesetiaan
