@@ -4,10 +4,9 @@
 </div>
 <h1 align="center">
   Locana
-  <p style="font-size:20px">Melihat Churn, Mengunci Kesetiaan</p>
+  <p style="font-size:15px">Melihat Churn, Mengunci Kesetiaan</p>
 </h1>
 
-## 
 Proyek kami fokus pada memprediksi churn pelanggan untuk membantu bisnis mempertahankan pelanggan yang paling berharga.\
 **Locana** dibuat menggunakan machine learning untuk memprediksi churn terhadap membership berbayar di e-commerce serta  mengidentifikasi segmentasi membership dan rekomendasi terhadap segmentasi tersebut.
 
