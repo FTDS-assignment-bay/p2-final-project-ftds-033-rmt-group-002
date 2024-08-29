@@ -1,5 +1,5 @@
 <!-- ![Header Image](deployment/Locana.png) -->
-<div align="center>
+<div align="center">
   <img src="deployment/Locana.png" alt="Locana" width="200"/>
 </div>
 <h2 align="center">Locana</h2>
