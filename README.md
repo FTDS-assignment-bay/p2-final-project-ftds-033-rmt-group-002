@@ -65,7 +65,7 @@ Membuat model prediksi dan model clustering yang bertujuan untuk memprediksi chu
 - [**Yuzal Qushoyyi Wahyudi**](https://www.linkedin.com/in/yuzalqushoyyiwahyudi/) (Data Engineer)
 ---
 
-[Deployment](https://huggingface.co/spaces/yuzalle/Locana)
+Deployment on [Hugging Face](https://huggingface.co/spaces/yuzalle/Locana)
 
 ---
 
