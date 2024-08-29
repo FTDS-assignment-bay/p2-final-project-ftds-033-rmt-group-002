@@ -48,6 +48,7 @@ Membuat model prediksi dan model clustering yang bertujuan untuk memprediksi chu
 ---
 
 ## Hasil
+![Classification Report](images/cr.png)
 ![Confusion Matrix](images/cm.png)
 ![2D and 3D Visualization](images/2d-3d.png)
 
@@ -57,6 +58,10 @@ Membuat model prediksi dan model clustering yang bertujuan untuk memprediksi chu
 - Model prediksi yang telah dibangun menggunakan algoritma Decision Tree berhasil mencapai akurasi yang tinggi yaitu 99%. Hal ini menunjukan bahwa model efektif dalam memprediksi apakah customer akan churn atau tetap loyal.
 
 - Model clustering berhasil membagi customer menjadi 4 kategori dengan karakteristik yang cukup jelas.
+- **Monthly Spender**: Customer yang memiliki daya beli yang tinggi dan rutin tiap bulannya. Pola belanja customer pada kelompok Monthly Spender umumnya adalah untuk belanja bulanan. Monthly Spender yang loyal merupakan customer yang rutin berbelanja, hemat dan efisien.
+- **Frequent Spender**: Customer yang memiliki daya beli yang tinggi dan rutin tiap minggunya. Pola belanja customer pada kelompok Frequent Spender umumnya adalah untuk belanja mingguan. Frequent Spender yang loyal merupakan customer yang sering berbelanja dan efisien.
+- **Young Risk**: Customer dengan rentang usia 18-49 tahun dan memiliki daya beli yang cukup. Pola belanja customer pada kelompok Young Risk umumnya adalah untuk belanja tiap 2 minggu. Young Risk yang loyal merupakan customer muda remaja hingga dewasa yang rutin berbelanja dan sedikit keluhan.
+- **Elder Risk**: Customer dengan rentang usia 49-65 tahun dan memiliki daya beli yang cukup. Pola belanja customer pada kelompok Older Risk umumnya adalah untuk belanja tiap 2 minggu. Older Risk yang loyal merupakan customer dewasa hingga lansia yang rutin berbelanja dan sedikit keluhan.
 
 ---
 
